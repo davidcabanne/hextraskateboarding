@@ -104,6 +104,7 @@ const StyledH4 = styled(H4)`
 const ColSecondary = styled.div`
   position: relative;
   height: 100%;
+  max-height: calc(100vh - 144px);
   display: grid;
   grid-template-columns: min-content 1fr;
   z-index: -1;
@@ -114,6 +115,7 @@ const ColSecondary = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+    max-height: 100vh;
     grid-template-columns: 1fr;
   }
 `;
