@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import Product from "@/components/Section/Product";
 import Video from "@/components/Section/Video";
+import Split from "@/components/Section/Split";
 import Footer from "@/components/Footer";
 
 import { H1, H2 } from "../components/typefaces";
@@ -14,6 +15,7 @@ import hero_amiel from "../public/Amiel---Bloc-1.jpg";
 import hero_dave_primary from "../public/Dave---Bloc-1.jpg";
 import hero_dave_secondary from "../public/David---Bloc-1.jpg";
 import hero_MTV from "../public/MTV---Bloc-1.jpg";
+import split_laurent from "../public/Laurent---Bloc-7.jpg";
 
 const heroes = [
   {
@@ -62,9 +64,9 @@ const video_almost_there = {
 import bloc_5_briggo from "../public/Briggo---Bloc-5.jpg";
 import footer_img from "../public/Amiel---Bloc-8.jpg";
 
-export default function Home() {
+export default function Home({ handleRenderTheme, theme }) {
   return (
-    <Layout>
+    <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
       <Hero imgs={heroes} />
 
       <Section fullScreen img={bloc_2_briggo} />
@@ -94,6 +96,8 @@ export default function Home() {
           édité par Robin Claude.
         </H2>
       </Video>
+
+      <Split imgs={[hero_MTV, split_laurent]} />
 
       <Section footer img={footer_img} />
       <Footer />

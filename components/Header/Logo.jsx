@@ -5,7 +5,8 @@ import * as _var from "@/styles/variables";
 const Svg = styled.svg`
   width: 70px;
   height: 80px;
-  fill: ${({ $light }) => ($light ? `${_var.mono_010}` : `${_var.mono_000}`)};
+  fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+  transition: fill 200ms ${_var.cubicBezier};
 
   ${(props) =>
     props.$header &&
@@ -15,15 +16,15 @@ const Svg = styled.svg`
     `}
 `;
 
-export default function Logo({ header, light }) {
+export default function Logo({ header, theme }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
       viewBox="0 0 461.6 529.8"
-      $light={light}
       $header={header}
+      $theme={theme}
     >
       <path
         d="M270.1,301.9c7.9,64.4,36.6,126.7,86,176.1l-51.8,51.8c-31.1-31.1-55.6-66.4-73.5-104

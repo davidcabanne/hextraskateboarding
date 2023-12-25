@@ -14,6 +14,8 @@ const Container = styled.section`
   padding: ${_var.space_L};
 
   @media ${_var.device.tablet_max} {
+    align-items: flex-start;
+
     padding: ${_var.space_M};
   }
   @media ${_var.device.mobileL_max} {
@@ -59,6 +61,7 @@ const Text = styled.div`
   @media ${_var.device.tablet_max} {
     text-align: start;
     padding: ${_var.space_M} 0;
+    max-width: 50ch;
   }
 
   @media ${_var.device.mobileL_max} {

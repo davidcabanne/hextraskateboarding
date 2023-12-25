@@ -9,10 +9,10 @@ const Container = styled.main`
   width: 100%;
 `;
 
-export default function Layout({ children }) {
+export default function Layout({ handleRenderTheme, theme, children }) {
   return (
     <Container>
-      <Header />
+      <Header handleRenderTheme={handleRenderTheme} theme={theme} />
       {children}
     </Container>
   );

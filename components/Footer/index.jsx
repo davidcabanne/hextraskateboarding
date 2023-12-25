@@ -56,7 +56,7 @@ export default function Footer() {
         <H5>Hextra Skateboarding</H5>
       </span>
       <div>
-        <Logo light />
+        <Logo />
       </div>
       <span>
         <H5>contact@hextraskateboarding.com</H5>

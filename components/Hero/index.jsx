@@ -10,7 +10,7 @@ const Container = styled.section`
   height: 100vh;
   display: flex;
   padding: ${_var.space_L};
-  padding-top: 104px;
+  padding-top: 110px;
 
   @media ${_var.device.tablet_max} {
     height: 100vh;
@@ -147,20 +147,9 @@ const Svg = styled.svg`
 export default function Hero({ imgs }) {
   const placeholderRef = useRef(null);
   const [indexCount, setIndex] = useState(0);
-  const [name, setName] = useState("");
 
   useEffect(() => {
     const lastIndex = imgs?.length - 1;
-
-    if (indexCount === 0) {
-      const selectedName = imgs.map((item) => {
-        if (item.index === 0) {
-          console.log(item.name);
-          return item.name;
-        }
-      });
-      setName(selectedName);
-    }
 
     if (indexCount < 0) {
       setIndex(lastIndex);
@@ -173,12 +162,6 @@ export default function Hero({ imgs }) {
   useEffect(() => {
     const slider = setInterval(() => {
       setIndex(indexCount + 1);
-      const selectedName = imgs.map((item) => {
-        if (item.index === indexCount + 1) {
-          return item.name;
-        }
-      });
-      setName(selectedName);
     }, 3000);
     return () => clearInterval(slider);
   }, [indexCount]);
@@ -202,6 +185,7 @@ export default function Hero({ imgs }) {
                   const { index, name } = item;
                   return (
                     <StyledH4
+                      key={name}
                       index={index}
                       className={indexCount === index ? "active" : ""}
                     >

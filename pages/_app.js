@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import { Titillium_Web } from "next/font/google";
 
@@ -52,6 +53,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background:  ${(props) => (props.theme ? _var.mono_010 : _var.mono_000)};
+  transition: background 200ms ${_var.cubicBezier};
 }
 
 .menuActive {
@@ -65,7 +68,6 @@ html {
   font-family: 'Titilium Web', Helvetica, sans-serif;
   font-size: 16px;
   scroll-behavior: smooth;
-  background: ${_var.mono_010};
 }
 
 a:not([class]) {
@@ -81,6 +83,22 @@ a:not([class]) {
 ::selection {
   color: ${_var.mono_010};
   background: ${_var.mono_000};
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color:  ${(props) => (props.theme ? _var.mono_000 : _var.mono_010)};
+  transition: color 200ms ${_var.cubicBezier};
+}
+
+svg {
+  fill: ${(props) => (props.theme ? _var.mono_000 : _var.mono_010)};
+  transition: fill 200ms ${_var.cubicBezier};
+}
+
+footer {
+  & h5 {
+    color: ${_var.mono_010};
+  }
 }
 
 
@@ -101,12 +119,23 @@ a:not([class]) {
 `;
 
 function MyApp({ Component, pageProps }) {
+  // Theme settings :
+  // light === true | dark === false
+  const [theme, setTheme] = useState(true);
+
+  const handleRenderTheme = (value) => {
+    setTheme(!value);
+  };
+
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle theme={theme} />
       <Head>
         <title>Hextra Skateboarding</title>
-        {/* <meta name="description" content={headDescription} /> */}
+        <meta
+          name="description"
+          content="Hextra Skateboarding | Rip the streets, not the planet"
+        />
 
         <link rel="icon" href="/images/favicon.ico"></link>
         <link
@@ -156,7 +185,11 @@ function MyApp({ Component, pageProps }) {
         {/* <meta name="twitter:image" content={headImage_secure_url} /> */}
       </Head>
       <div className={titilum.className}>
-        <Component {...pageProps} />
+        <Component
+          {...pageProps}
+          handleRenderTheme={handleRenderTheme}
+          theme={theme}
+        />
       </div>
     </>
   );
