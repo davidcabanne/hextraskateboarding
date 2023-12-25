@@ -5,6 +5,8 @@ import { Titillium_Web } from "next/font/google";
 import { createGlobalStyle } from "styled-components";
 import * as _var from "../styles/variables";
 
+import * as seo from "../seo";
+
 const titilum = Titillium_Web({
   weight: ["200", "300", "400", "600", "700", "900"],
   style: ["normal"],
@@ -132,47 +134,38 @@ function MyApp({ Component, pageProps }) {
       <GlobalStyle theme={theme} />
       <Head>
         <title>Hextra Skateboarding</title>
-        <meta
-          name="description"
-          content="Hextra Skateboarding | Rip the streets, not the planet"
-        />
+        <meta name="description" content={seo.content} />
 
-        <link rel="icon" href="/images/favicon.ico"></link>
-        <link
-          rel="icon"
-          type="image/x-icon"
-          sizes="any"
-          href="/images/favicon.ico"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/images/favicon.ico"
-        />
+        <link rel="icon" href="/favicon.ico"></link>
+        <link rel="icon" type="image/x-icon" sizes="any" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
         <link
           rel="icon"
           type="image/x-icon"
           sizes="32x32"
-          href="/images/favicon.ico"
+          href="/favicon.ico"
         />
         <link
           rel="icon"
           type="image/x-icon"
           sizes="16x16"
-          href="/images/favicon.ico"
+          href="/favicon.ico"
         />
 
         {/* OPEN GRAPH */}
         <meta property="og:title" content="Hextra Skateboarding" />
-        <meta property="og:url" content="https://www.doucecateringstudio.com" />
+        <meta property="og:url" content="https://www.hextraskateboarding.com" />
         <meta
           property="og:site_name"
           content="douce catering | traiteur et design culinaire"
         />
         <meta property="og:type" content="website" />
-        {/* <meta property="og:description" content={headDescription} />
-        <meta property="og:image:secure_url" content={headImage_secure_url} />
-        <meta property="og:image" content={headImage} /> */}
+        <meta property="og:description" content={seo.headDescription} />
+        <meta
+          property="og:image:secure_url"
+          content={seo.headImage_secure_url}
+        />
+        <meta property="og:image" content={seo.headImage} />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="384" />
         <meta property="og:image:height" content="216" />
@@ -181,8 +174,8 @@ function MyApp({ Component, pageProps }) {
         <meta name="twitter:card" content="Hextra Skateboarding" />
         <meta name="twitter:site" content="@HextraSkateboarding" />
         <meta name="twitter:title" content="Hextra Skateboarding" />
-        {/* <meta name="twitter:description" content={headDescription} /> */}
-        {/* <meta name="twitter:image" content={headImage_secure_url} /> */}
+        <meta name="twitter:description" content={seo.headDescription} />
+        <meta name="twitter:image" content={seo.headImage_secure_url} />
       </Head>
       <div className={titilum.className}>
         <Component
