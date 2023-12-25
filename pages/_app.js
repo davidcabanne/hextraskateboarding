@@ -47,7 +47,7 @@ html:focus-within {
 body {
   width: 100vw;
   min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 100svh;
   min-height: -webkit-fill-available;
   text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
@@ -59,7 +59,7 @@ body {
 
 .menuActive {
     height: 100vh;
-    height: 100dvh;
+    height: 100svh;
     overflow-y: hidden;
   }
 

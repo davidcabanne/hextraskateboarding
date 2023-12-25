@@ -10,12 +10,12 @@ import Footer from "@/components/Footer";
 
 import { H1, H2 } from "../components/typefaces";
 
-import hero_briggo from "../public/Briggo---Bloc-1.jpg";
-import hero_amiel from "../public/Amiel---Bloc-1.jpg";
-import hero_dave_primary from "../public/Dave---Bloc-1.jpg";
-import hero_dave_secondary from "../public/David---Bloc-1.jpg";
-import hero_MTV from "../public/MTV---Bloc-1.jpg";
-import split_laurent from "../public/Laurent---Bloc-7.jpg";
+import hero_briggo from "../public/photos/Briggo---Bloc-1.jpg";
+import hero_amiel from "../public/photos/Amiel---Bloc-1.jpg";
+import hero_dave_primary from "../public/photos/Dave---Bloc-1.jpg";
+import hero_dave_secondary from "../public/photos/David---Bloc-1.jpg";
+import hero_MTV from "../public/photos/MTV---Bloc-1.jpg";
+import split_laurent from "../public/photos/Laurent---Bloc-7.jpg";
 
 const heroes = [
   {
@@ -45,15 +45,15 @@ const heroes = [
   },
 ];
 
-import bloc_2_briggo from "../public/Briggo---Bloc-2.jpg";
+import bloc_2_briggo from "../public/photos/Briggo---Bloc-2.jpg";
 
-import product_hextraShift_1 from "../public/Amiel---Bloc-2.jpg";
-import product_hextraShift_2 from "../public/Amiel---Bloc-3.jpg";
+import product_hextraShift_1 from "../public/photos/Amiel---Bloc-2.jpg";
+import product_hextraShift_2 from "../public/photos/Amiel---Bloc-3.jpg";
 
-import product_board_1 from "../public/Board-1---Bloc-4.jpg";
-import product_board_2 from "../public/Board-2---Bloc-5.jpg";
+import product_board_1 from "../public/photos/Board-1---Bloc-4.jpg";
+import product_board_2 from "../public/photos/Board-2---Bloc-5.jpg";
 
-import video_almost_there_img from "../public/video-almost--there.jpg";
+import video_almost_there_img from "../public/video/video-almost--there.jpg";
 const video_almost_there = {
   title: "Hextra Skateboarding | ALMOST THERE",
   src: "https://www.youtube.com/embed/0WVK8aUEoQE?si=B31ktaGrU3HrwpXY",
@@ -61,8 +61,8 @@ const video_almost_there = {
   alt: "alt test",
 };
 
-import bloc_5_briggo from "../public/Briggo---Bloc-5.jpg";
-import footer_img from "../public/Amiel---Bloc-8.jpg";
+import bloc_5_briggo from "../public/photos/Briggo---Bloc-5.jpg";
+import footer_img from "../public/photos/Amiel---Bloc-8.jpg";
 
 export default function Home({ handleRenderTheme, theme }) {
   return (

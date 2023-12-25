@@ -14,7 +14,7 @@ const Container = styled.section`
 
   @media ${_var.device.tablet_max} {
     height: 100vh;
-    height: 100dvh;
+    height: 100svh;
     padding: ${_var.space_M};
   }
   @media ${_var.device.mobileL_max} {
