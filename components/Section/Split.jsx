@@ -13,6 +13,7 @@ const Container = styled.section`
   padding: ${_var.space_L};
 
   @media ${_var.device.tablet_max} {
+    grid-template-columns: 1fr 1fr;
     gap: ${_var.space_M};
     padding: ${_var.space_M};
   }
@@ -27,12 +28,17 @@ const Placeholder = styled.div`
 
   & img {
     width: 100%;
-    height: 100%;
+    max-height: 100vh;
   }
 `;
 
 const Svg = styled.svg`
   height: 100%;
+  max-height: 100vh;
+
+  @media ${_var.device.tablet_max} {
+    display: none;
+  }
 `;
 
 export default function Split({ imgs }) {
