@@ -47,6 +47,7 @@ const Nav = styled.nav`
 `;
 
 const Svg = styled.svg`
+  cursor: pointer;
   transform: rotate(0deg);
   transition: transform 250ms ${_var.cubicBezier};
 
