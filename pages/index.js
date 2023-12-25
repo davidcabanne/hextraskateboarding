@@ -9,7 +9,40 @@ import Footer from "@/components/Footer";
 
 import { H1, H2 } from "../components/typefaces";
 
-import hero from "../public/Briggo---Bloc-1.jpg";
+import hero_briggo from "../public/Briggo---Bloc-1.jpg";
+import hero_amiel from "../public/Amiel---Bloc-1.jpg";
+import hero_dave_primary from "../public/Dave---Bloc-1.jpg";
+import hero_dave_secondary from "../public/David---Bloc-1.jpg";
+import hero_MTV from "../public/MTV---Bloc-1.jpg";
+
+const heroes = [
+  {
+    name: "George Briggs",
+    img: hero_briggo,
+    index: 0,
+  },
+  {
+    name: "Amiel Coralia",
+    img: hero_amiel,
+    index: 1,
+  },
+  {
+    name: "David Cabanne",
+    img: hero_dave_primary,
+    index: 2,
+  },
+  {
+    name: "David Cabanne",
+    img: hero_dave_secondary,
+    index: 3,
+  },
+  {
+    name: "David Métivier",
+    img: hero_MTV,
+    index: 4,
+  },
+];
+
 import bloc_2_briggo from "../public/Briggo---Bloc-2.jpg";
 
 import product_hextraShift_1 from "../public/Amiel---Bloc-2.jpg";
@@ -32,28 +65,23 @@ import footer_img from "../public/Amiel---Bloc-8.jpg";
 export default function Home() {
   return (
     <Layout>
-      <Hero img={hero} />
+      <Hero imgs={heroes} />
 
       <Section fullScreen img={bloc_2_briggo} />
 
       <Product alignRight imgs={[product_hextraShift_1, product_hextraShift_2]}>
         <H1>Hextra Shift</H1>
         <H2>
-          Pièces de seconde main
-          <br />
-          chinées et remise en état de
-          <br />
-          service à Bordeaux
+          Pièces de seconde main chinées et remise en état de service à
+          Bordeaux.
         </H2>
       </Product>
 
       <Product imgs={[product_board_1, product_board_2]}>
         <H1>Hextra Skateboards</H1>
         <H2>
-          Fabriquées dans un atelier français
-          <br />à moins de 200km de Bordeaux.
-          <br /> Composée de 7 plis d'érable canadien,
-          <br /> certifié PEFC.
+          Fabriquées dans un atelier français à moins de 200km de Bordeaux.
+          Composée de 7 plis d'érable canadien, certifié PEFC.
         </H2>
       </Product>
 
@@ -62,11 +90,8 @@ export default function Home() {
       <Video alignRight data={video_almost_there}>
         <H1>Almost There</H1>
         <H2>
-          David Métivier en action
-          <br />
-          pour sa première part avec
-          <br /> Hextra. Filmé et édité par
-          <br /> Robin Claude.
+          David Métivier en action pour sa première part avec Hextra. Filmé et
+          édité par Robin Claude.
         </H2>
       </Video>
 

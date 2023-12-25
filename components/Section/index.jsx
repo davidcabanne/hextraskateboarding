@@ -17,16 +17,40 @@ const Container = styled.section`
   align-items: center;
   padding: ${_var.space_L};
 
+  @media ${_var.device.tablet_max} {
+    padding: ${_var.space_M};
+  }
+
+  @media ${_var.device.mobileL_max} {
+    padding: ${_var.space_S};
+  }
+
   ${(props) =>
     props.$fullScreen &&
     css`
       padding: ${_var.space_L} 0px;
+
+      @media ${_var.device.tablet_max} {
+        min-height: 50vh;
+        min-height: 50dvh;
+        padding: ${_var.space_M} 0px;
+      }
+
+      @media ${_var.device.mobileL_max} {
+        padding: ${_var.space_S} 0px;
+      }
     `}
 
   ${(props) =>
     props.$footer &&
     css`
       padding: ${_var.space_L} 0px 0px 0px;
+
+      @media ${_var.device.tablet_max} {
+        min-height: 50vh;
+        min-height: 50dvh;
+        padding: 0px;
+      }
     `}
 `;
 
@@ -41,6 +65,13 @@ const Group = styled.div`
   padding: calc(${_var.space_L} * 2);
   color: ${_var.mono_010};
   z-index: 1;
+
+  @media ${_var.device.tablet_max} {
+    padding: ${_var.space_L};
+  }
+  @media ${_var.device.mobileL_max} {
+    padding: ${_var.space_M};
+  }
 `;
 
 export default function Section({ fullScreen, footer, img }) {

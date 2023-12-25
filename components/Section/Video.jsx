@@ -10,6 +10,13 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   padding: ${_var.space_L} calc((${_var.space_L} * 4));
+
+  @media ${_var.device.tablet_max} {
+    padding: ${_var.space_M} ${_var.space_M};
+  }
+  @media ${_var.device.mobileL_max} {
+    padding: ${_var.space_S} ${_var.space_S} ${_var.space_M} ${_var.space_S};
+  }
 `;
 
 const Placeholder = styled.div`
@@ -53,8 +60,22 @@ const Text = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${_var.space_XS};
+  align-items: ${(props) => (props.$alignRight ? "flex-end" : "flex-start")};
   text-align: ${(props) => (props.$alignRight ? "end" : "start")};
   padding: ${_var.space_L} ${_var.space_L} 0px ${_var.space_L};
+
+  & h2 {
+    max-width: 24ch;
+  }
+
+  @media ${_var.device.tablet_max} {
+    align-items: flex-start;
+    text-align: start;
+    padding: ${_var.space_M} 0px;
+  }
+  @media ${_var.device.mobileL_max} {
+    padding: ${_var.space_S} 0px;
+  }
 `;
 
 export default function Video({ children, data, alignRight }) {
@@ -81,7 +102,7 @@ export default function Video({ children, data, alignRight }) {
           fill
           placeholder="blur"
           style={{ objectFit: "cover" }}
-          alt="Picture of the author"
+          alt={alt}
           onClick={(event) => handlePlay(event)}
           className={isPlaying ? "active" : ""}
         />

@@ -73,10 +73,15 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* img {
-  display: block;
-  width: 100%;
-} */
+::-moz-selection {
+  color: ${_var.mono_010};
+  background: ${_var.mono_000};
+}
+
+::selection {
+  color: ${_var.mono_010};
+  background: ${_var.mono_000};
+}
 
 
 @media (prefers-reduced-motion: reduce) {
