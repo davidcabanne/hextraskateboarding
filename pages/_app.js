@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import Head from "next/head";
 import { Titillium_Web } from "next/font/google";
-
 import { createGlobalStyle } from "styled-components";
 import * as _var from "../styles/variables";
-
 import * as seo from "../seo";
 
 const titilum = Titillium_Web({
@@ -57,6 +55,8 @@ body {
   overflow-x: hidden;
   background:  ${(props) => (props.theme ? _var.mono_010 : _var.mono_000)};
   transition: background 200ms ${_var.cubicBezier};
+
+  cursor:url("/hextra--cursor.svg") 16 -16, auto;
 }
 
 .menuActive {
@@ -83,8 +83,8 @@ a:not([class]) {
 }
 
 ::selection {
-  color: ${_var.mono_010};
-  background: ${_var.mono_000};
+  color: ${(props) => (props.theme ? _var.mono_010 : _var.mono_000)};
+  background: ${(props) => (props.theme ? _var.mono_000 : _var.mono_010)};
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -102,7 +102,6 @@ footer {
     color: ${_var.mono_010};
   }
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {

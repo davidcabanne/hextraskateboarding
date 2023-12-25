@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled, { css } from "styled-components";
 import * as _var from "../../styles/variables";
 
@@ -56,7 +57,9 @@ export default function Footer() {
         <H5>Hextra Skateboarding</H5>
       </span>
       <div>
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </div>
       <span>
         <H5>contact@hextraskateboarding.com</H5>
