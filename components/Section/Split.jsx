@@ -25,12 +25,20 @@ const Container = styled.section`
 
 const Placeholder = styled.div`
   width: 100%;
+  height: 100vh;
+
+  @media ${_var.device.tablet_max} {
+    height: 100%;
+  }
 
   & img {
     width: 100%;
+    height: 100vh;
+
     max-height: 100vh;
 
     @media ${_var.device.tablet_max} {
+      height: 100%;
       max-height: 50vh;
     }
   }

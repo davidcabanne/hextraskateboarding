@@ -5,6 +5,10 @@ import { createGlobalStyle } from "styled-components";
 import * as _var from "../styles/variables";
 import * as seo from "../seo";
 
+import MouseContextProvider from "../context/mouseContext";
+
+import Cursor from "../components/Cursor/index";
+
 const titilum = Titillium_Web({
   weight: ["200", "300", "400", "600", "700", "900"],
   style: ["normal"],
@@ -56,7 +60,7 @@ body {
   background:  ${(props) => (props.theme ? _var.mono_010 : _var.mono_000)};
   transition: background 200ms ${_var.cubicBezier};
 
-  cursor:url("/hextra--cursor.svg") 16 -16, auto;
+  cursor: none;
 }
 
 .menuActive {
@@ -130,59 +134,70 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <GlobalStyle theme={theme} />
-      <Head>
-        <title>Hextra Skateboarding</title>
-        <meta name="description" content={seo.content} />
+      <MouseContextProvider>
+        <GlobalStyle theme={theme} />
+        <Head>
+          <title>Hextra Skateboarding</title>
+          <meta name="description" content={seo.content} />
 
-        <link rel="icon" href="/favicon.ico"></link>
-        <link rel="icon" type="image/x-icon" sizes="any" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          sizes="32x32"
-          href="/favicon.ico"
-        />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          sizes="16x16"
-          href="/favicon.ico"
-        />
+          <link rel="icon" href="/favicon.ico"></link>
+          <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="any"
+            href="/favicon.ico"
+          />
+          <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+          <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="32x32"
+            href="/favicon.ico"
+          />
+          <link
+            rel="icon"
+            type="image/x-icon"
+            sizes="16x16"
+            href="/favicon.ico"
+          />
 
-        {/* OPEN GRAPH */}
-        <meta property="og:title" content="Hextra Skateboarding" />
-        <meta property="og:url" content="https://www.hextraskateboarding.com" />
-        <meta
-          property="og:site_name"
-          content="douce catering | traiteur et design culinaire"
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content={seo.headDescription} />
-        <meta
-          property="og:image:secure_url"
-          content={seo.headImage_secure_url}
-        />
-        <meta property="og:image" content={seo.headImage} />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:width" content="384" />
-        <meta property="og:image:height" content="216" />
+          {/* OPEN GRAPH */}
+          <meta property="og:title" content="Hextra Skateboarding" />
+          <meta
+            property="og:url"
+            content="https://www.hextraskateboarding.com"
+          />
+          <meta
+            property="og:site_name"
+            content="douce catering | traiteur et design culinaire"
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:description" content={seo.headDescription} />
+          <meta
+            property="og:image:secure_url"
+            content={seo.headImage_secure_url}
+          />
+          <meta property="og:image" content={seo.headImage} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="384" />
+          <meta property="og:image:height" content="216" />
 
-        {/* TWITTER CARDS */}
-        <meta name="twitter:card" content="Hextra Skateboarding" />
-        <meta name="twitter:site" content="@HextraSkateboarding" />
-        <meta name="twitter:title" content="Hextra Skateboarding" />
-        <meta name="twitter:description" content={seo.headDescription} />
-        <meta name="twitter:image" content={seo.headImage_secure_url} />
-      </Head>
-      <div className={titilum.className}>
-        <Component
-          {...pageProps}
-          handleRenderTheme={handleRenderTheme}
-          theme={theme}
-        />
-      </div>
+          {/* TWITTER CARDS */}
+          <meta name="twitter:card" content="Hextra Skateboarding" />
+          <meta name="twitter:site" content="@HextraSkateboarding" />
+          <meta name="twitter:title" content="Hextra Skateboarding" />
+          <meta name="twitter:description" content={seo.headDescription} />
+          <meta name="twitter:image" content={seo.headImage_secure_url} />
+        </Head>
+        <div className={titilum.className}>
+          <Cursor />
+          <Component
+            {...pageProps}
+            handleRenderTheme={handleRenderTheme}
+            theme={theme}
+          />
+        </div>
+      </MouseContextProvider>
     </>
   );
 }

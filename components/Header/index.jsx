@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
+
 import Link from "next/link";
 import styled from "styled-components";
 import * as _var from "@/styles/variables";
@@ -47,7 +50,6 @@ const Nav = styled.nav`
 `;
 
 const Svg = styled.svg`
-  cursor: pointer;
   transform: rotate(0deg);
   transition: transform 250ms ${_var.cubicBezier};
 
@@ -57,11 +59,17 @@ const Svg = styled.svg`
 `;
 
 export default function Header({ handleRenderTheme, theme }) {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   return (
     <Container $theme={theme}>
       <Nav>
-        <Link href="/">
-          <Logo header theme={theme} />
+        <Link
+          href="/"
+          style={{ cursor: "none" }}
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+        >
+          <Logo theme={theme} />
         </Link>
 
         <Svg
@@ -71,6 +79,8 @@ export default function Header({ handleRenderTheme, theme }) {
           xmlns="http://www.w3.org/2000/svg"
           onClick={() => handleRenderTheme(theme)}
           className={theme ? "active" : ""}
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
         >
           <path d="m12 22c5.5228475 0 10-4.4771525 10-10s-4.4771525-10-10-10-10 4.4771525-10 10 4.4771525 10 10 10zm0-1.5v-17c4.6944204 0 8.5 3.80557963 8.5 8.5 0 4.6944204-3.8055796 8.5-8.5 8.5z" />
         </Svg>

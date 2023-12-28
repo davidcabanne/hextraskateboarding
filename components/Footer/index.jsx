@@ -1,3 +1,6 @@
+import React, { useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
+
 import Link from "next/link";
 import styled, { css } from "styled-components";
 import * as _var from "../../styles/variables";
@@ -51,13 +54,20 @@ const Container = styled.footer`
 `;
 
 export default function Footer() {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
   return (
     <Container>
       <span>
         <H5>Hextra Skateboarding</H5>
       </span>
       <div>
-        <Link href="/">
+        <Link
+          href="/"
+          style={{ cursor: "none" }}
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+        >
           <Logo />
         </Link>
       </div>

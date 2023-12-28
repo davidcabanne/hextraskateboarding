@@ -15,7 +15,6 @@ const Container = styled.section`
 
   @media ${_var.device.tablet_max} {
     align-items: flex-start;
-
     padding: ${_var.space_M};
   }
   @media ${_var.device.mobileL_max} {

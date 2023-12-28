@@ -1,4 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { MouseContext } from "../../context/mouseContext";
+
 import Image from "next/image";
 import styled, { css } from "styled-components";
 import * as _var from "../../styles/variables";
@@ -27,7 +29,7 @@ const Placeholder = styled.div`
   aspect-ratio: 1 / 1;
 
   & img {
-    cursor: pointer;
+    cursor: none;
     z-index: 1;
     opacity: 1;
     transition: opacity 500ms ${_var.cubicBezier};
@@ -79,6 +81,7 @@ const Text = styled.div`
 `;
 
 export default function Video({ children, data, alignRight }) {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const [isPlaying, setIsPlaying] = useState(false);
   const playerRef = useRef(null);
 
@@ -105,6 +108,8 @@ export default function Video({ children, data, alignRight }) {
           alt={alt}
           onClick={(event) => handlePlay(event)}
           className={isPlaying ? "active" : ""}
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
         />
         <Iframe
           ref={playerRef}

@@ -3,27 +3,19 @@ import styled, { css } from "styled-components";
 import * as _var from "@/styles/variables";
 
 const Svg = styled.svg`
-  width: 70px;
-  height: 80px;
+  width: 32px;
+  height: 40px;
   fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
   transition: fill 200ms ${_var.cubicBezier};
-
-  ${(props) =>
-    props.$header &&
-    css`
-      width: 32px;
-      height: 40px;
-    `}
 `;
 
-export default function Logo({ header, theme }) {
+export default function Logo({ theme }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"
       viewBox="0 0 461.6 529.8"
-      $header={header}
       $theme={theme}
     >
       <path
