@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
-import Section from "@/components/Section";
-import Product from "@/components/Section/Product";
-import Video from "@/components/Section/Video";
-import Split from "@/components/Section/Split";
+import Section from "@/components/Section/Section";
+
+import ProductSection from "@/components/Section/Product/ProductSection";
+import ProductText from "@/components/Section/Product/ProductText";
+import ProductImages from "@/components/Section/Product/ProductImages";
+import ProductImage from "@/components/Section/Product/ProductImage";
+
+import VideoSection from "@/components/Section/Video/VideoSection";
+import VideoPlaceholder from "@/components/Section/Video/VideoPlaceholder";
+import VideoText from "@/components/Section/Video/VideoText";
+
+import SplitSection from "@/components/Section/Split/SplitSection";
 import Footer from "@/components/Footer";
 
 import { H1, H2 } from "../components/typefaces";
@@ -71,33 +79,48 @@ export default function Home({ handleRenderTheme, theme }) {
 
       <Section fullScreen img={bloc_2_briggo} />
 
-      <Product alignRight imgs={[product_hextraShift_1, product_hextraShift_2]}>
-        <H1>Hextra Shift</H1>
-        <H2>
-          Pièces de seconde main chinées et remise en état de service à
-          Bordeaux.
-        </H2>
-      </Product>
+      <ProductSection alignRight>
+        <ProductImages>
+          <ProductImage img={product_hextraShift_1} index={0} />
+          <ProductImage img={product_hextraShift_2} index={1} />
+        </ProductImages>
+        <ProductText>
+          <H1>Hextra Shift</H1>
+          <H2>
+            Pièces de seconde main chinées et remise en état de service à
+            Bordeaux.
+          </H2>
+        </ProductText>
+      </ProductSection>
 
-      <Product imgs={[product_board_1, product_board_2]}>
-        <H1>Hextra Skateboards</H1>
-        <H2>
-          Fabriquées dans un atelier français à moins de 200km de Bordeaux.
-          Composée de 7 plis d'érable canadien, certifié PEFC.
-        </H2>
-      </Product>
+      <ProductSection>
+        <ProductImages>
+          <ProductImage img={product_board_1} index={0} />
+          <ProductImage img={product_board_2} index={1} />
+        </ProductImages>
+        <ProductText>
+          <H1>Hextra Skateboards</H1>
+          <H2>
+            Fabriquées dans un atelier français à moins de 200km de Bordeaux.
+            Composée de 7 plis d'érable canadien, certifié PEFC.
+          </H2>
+        </ProductText>
+      </ProductSection>
 
       <Section fullScreen img={bloc_5_briggo} />
 
-      <Video alignRight data={video_almost_there}>
-        <H1>Almost There</H1>
-        <H2>
-          David Métivier en action pour sa première part avec Hextra. Filmé et
-          édité par Robin Claude.
-        </H2>
-      </Video>
+      <VideoSection>
+        <VideoPlaceholder data={video_almost_there} />
+        <VideoText alignRight>
+          <H1>Almost There</H1>
+          <H2>
+            David Métivier en action pour sa première part avec Hextra. Filmé et
+            édité par Robin Claude.
+          </H2>
+        </VideoText>
+      </VideoSection>
 
-      <Split imgs={[hero_MTV, split_laurent]} />
+      <SplitSection imgs={[hero_MTV, split_laurent]} />
 
       <Section footer img={footer_img} />
       <Footer />

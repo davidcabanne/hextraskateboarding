@@ -1,7 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import useElementOnScreen from "../../../hooks/useElementOnScreen";
+
 import styled, { css } from "styled-components";
-import * as _var from "../../styles/variables";
+import * as _var from "../../../styles/variables";
 
 const Container = styled.section`
   position: relative;
@@ -11,6 +13,8 @@ const Container = styled.section`
   grid-template-columns: 1fr min-content 1fr min-content;
   gap: ${_var.space_L};
   padding: ${_var.space_L};
+
+  ${_var.revealAnimation}
 
   @media ${_var.device.tablet_max} {
     grid-template-columns: 1fr;
@@ -65,11 +69,18 @@ const SvgMobile = styled.svg`
   }
 `;
 
-export default function Split({ imgs }) {
+export default function SplitSection({ imgs }) {
   const leftImg = imgs[0];
   const rightImg = imgs[1];
+
+  // HOOK
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: _var.rootMargin,
+    threshold: _var.threshold,
+  });
   return (
-    <Container>
+    <Container ref={containerRef} className={isVisible ? "active" : ""}>
       <SvgMobile
         xmlns="http://www.w3.org/2000/svg"
         x="0px"

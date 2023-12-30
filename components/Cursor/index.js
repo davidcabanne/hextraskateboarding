@@ -27,7 +27,7 @@ const Svg = styled.svg`
 
   &.active {
     fill: white;
-    transform: translate(-16px, -16px) rotate(180deg) scale(1.2);
+    transform: translate(-16px, -16px) rotate(90deg) scale(1.2);
   }
 `;
 
@@ -46,7 +46,7 @@ const Cursor = () => {
       className={cursorType === "hovered" ? "active" : ""}
     >
       <g>
-        <circle class="st0" cx="16" cy="16" r="16" />
+        <circle className="st0" cx="16" cy="16" r="16" />
         <path
           style={{ fill: "white", mixBlendMode: "difference" }}
           d="M17.2,17.2c0.2,2,1.2,4,2.8,5.6l-1.6,1.6c-1-1-1.8-2.2-2.4-3.4c-0.6,1.2-1.4,2.4-2.4,3.4L12,22.8

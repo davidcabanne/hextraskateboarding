@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import useElementOnScreen from "../../hooks/useElementOnScreen";
+
 import styled, { css } from "styled-components";
 import * as _var from "../../styles/variables";
 
@@ -14,6 +16,8 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   padding: ${_var.space_L};
+
+  ${_var.revealAnimation}
 
   @media ${_var.device.tablet_max} {
     padding: ${_var.space_M};
@@ -53,8 +57,19 @@ const Container = styled.section`
 `;
 
 export default function Section({ fullScreen, footer, img }) {
+  // HOOK
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: _var.rootMargin,
+    threshold: _var.threshold,
+  });
   return (
-    <Container $fullScreen={fullScreen} $footer={footer}>
+    <Container
+      ref={containerRef}
+      $fullScreen={fullScreen}
+      $footer={footer}
+      className={isVisible ? "active" : ""}
+    >
       <Placeholder footer={footer}>
         <Image
           src={img}

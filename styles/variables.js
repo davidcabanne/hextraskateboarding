@@ -48,6 +48,20 @@ export const space_XXXL = "128px";
 
 // ANIMATION STYLES
 export const cubicBezier = "cubic-bezier(0.79, 0.14, 0.15, 0.86)";
+export const animationCustomTiming = "400ms";
+export const revealAnimation = `
+opacity: 0.15;
+  transform: translateY(32px);
+  transition: ${animationCustomTiming} ${cubicBezier};
+  transition-property: opacity, transform;
+
+  &.active {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+`;
+export const rootMargin = "0px 0px -32px 0px";
+export const threshold = 0;
 
 // SHADOWS
 //

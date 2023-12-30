@@ -186,7 +186,6 @@ export default function Hero({ imgs }) {
                   return (
                     <StyledH4
                       key={name}
-                      index={index}
                       className={indexCount === index ? "active" : ""}
                     >
                       {name}
