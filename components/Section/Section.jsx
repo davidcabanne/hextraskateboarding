@@ -34,7 +34,7 @@ const Container = styled.section`
 
       @media ${_var.device.tablet_max} {
         min-height: 50vh;
-        min-height: 50dvh;
+        min-height: 50svh;
         padding: ${_var.space_M} 0px;
       }
 
@@ -50,7 +50,7 @@ const Container = styled.section`
 
       @media ${_var.device.tablet_max} {
         min-height: 50vh;
-        min-height: 50dvh;
+        min-height: 50svh;
         padding: 0px;
       }
     `}
