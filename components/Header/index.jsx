@@ -1,5 +1,7 @@
-import React, { useContext } from "react";
-import { MouseContext } from "../../context/mouseContext";
+import React, { useState, useEffect, useContext } from "react";
+import { MouseContext } from "@/context/mouseContext";
+// import useScrollDir from "@/hooks/useScrollDir";
+import useScrollPosition from "@/hooks/useScrollPosition";
 
 import Link from "next/link";
 import styled from "styled-components";
@@ -16,13 +18,41 @@ const Container = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: ${(props) => (props.$theme ? lightTheme : darkTheme)};
-
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   z-index: 900;
 
-  transition: background 200ms ${_var.cubicBezier};
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: ${(props) => (props.$theme ? lightTheme : darkTheme)};
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 200ms ${_var.cubicBezier};
+    transition-property: opacity, background;
+    transition-duration: 350ms, 200ms;
+    transition-delay: 200ms, 0ms;
+  }
+
+  & nav > svg {
+    opacity: 0;
+    pointer-events: none;
+    transition-duration: 75ms, 250ms;
+  }
+
+  &.active {
+    &::after {
+      opacity: 1;
+      transition-delay: 10ms, 0ms;
+    }
+
+    & nav > svg {
+      opacity: 1;
+      pointer-events: auto;
+      transition-duration: 300ms, 250ms;
+      transition-delay: 260ms, 0ms;
+    }
+  }
 `;
 
 const Nav = styled.nav`
@@ -50,8 +80,11 @@ const Nav = styled.nav`
 `;
 
 const Svg = styled.svg`
+  opacity: 0;
   transform: rotate(0deg);
-  transition: transform 250ms ${_var.cubicBezier};
+  transition: ${_var.cubicBezier};
+  transition-property: opacity, transform;
+  transition-delay: 150ms, 0ms;
 
   &.active {
     transform: rotate(180deg);
@@ -59,9 +92,23 @@ const Svg = styled.svg`
 `;
 
 export default function Header({ handleRenderTheme, theme }) {
+  const [hasScrolled, setHasScrolled] = useState(false);
+
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  const scrollPosition = useScrollPosition();
+
+  useEffect(() => {
+    if (scrollPosition > 0) {
+      setHasScrolled(true);
+    }
+    if (scrollPosition === 0) {
+      setHasScrolled(false);
+    }
+  }, [scrollPosition]);
+
   return (
-    <Container $theme={theme}>
+    <Container $theme={theme} className={hasScrolled ? "active" : ""}>
       <Nav>
         <Link
           href="/"
@@ -71,7 +118,6 @@ export default function Header({ handleRenderTheme, theme }) {
         >
           <Logo theme={theme} />
         </Link>
-
         <Svg
           height="24"
           viewBox="0 0 24 24"

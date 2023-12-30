@@ -13,7 +13,7 @@ const Svg = styled.svg`
   z-index: 911;
   pointer-events: none;
   fill: black;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 64px;
   transform-origin: center;
   transform: translate(-16px, -16px) rotate(0deg) scale(1);
@@ -22,11 +22,12 @@ const Svg = styled.svg`
   -webkit-transition-timing-function: ${_var.cubicBezier};
   transition-timing-function: ${_var.cubicBezier};
   transition: ${animationDuration} ${_var.cubicBezier};
-  transition-property: fill, transform;
+  transition-property: border, fill, transform;
   will-change: transform;
 
   &.active {
     fill: white;
+    border: 1px solid black;
     transform: translate(-16px, -16px) rotate(90deg) scale(1.2);
   }
 `;
