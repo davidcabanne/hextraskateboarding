@@ -10,7 +10,6 @@ const Container = styled.section`
   height: 100vh;
   display: flex;
   padding: ${_var.space_L};
-  padding-top: 110px;
 
   @media ${_var.device.tablet_max} {
     height: 100vh;
@@ -104,7 +103,6 @@ const StyledH4 = styled(H4)`
 const ColSecondary = styled.div`
   position: relative;
   height: 100%;
-  max-height: calc(100vh - 144px);
   display: grid;
   grid-template-columns: min-content 1fr;
   z-index: -1;
