@@ -48,6 +48,14 @@ const CallToActions = styled.div`
   -webkit-backdrop-filter: blur(10px);
   padding: ${_var.space_S} ${_var.space_S};
   border-radius: ${_var.space_L};
+  transition: 200ms ${_var.cubicBezier};
+  transition-property: background;
+
+  &.active {
+    background: transparent;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
 `;
 
 const Menu = styled.div`
@@ -59,6 +67,8 @@ const Menu = styled.div`
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: -1;
+  transition: 200ms ${_var.cubicBezier};
+  transition-property: opacity;
 
   &.active {
     opacity: 1;
@@ -110,7 +120,7 @@ export default function NavDesktop({
         <NavLink link="/" theme={theme}>
           <Logo theme={theme} />
         </NavLink>
-        <CallToActions $theme={theme}>
+        <CallToActions $theme={theme} className={menuActive ? "active" : ""}>
           <Svg
             height="24"
             viewBox="0 0 24 24"
@@ -137,6 +147,8 @@ export default function NavDesktop({
             active={`${pathname}` === "/lookbook"}
             theme={theme}
             mobileMenuLink
+            menuActive={menuActive}
+            index={0}
           >
             Lookbook
           </NavLink>
@@ -145,6 +157,8 @@ export default function NavDesktop({
             active={`${pathname}` === "/boards"}
             theme={theme}
             mobileMenuLink
+            menuActive={menuActive}
+            index={1}
           >
             Boards
           </NavLink>

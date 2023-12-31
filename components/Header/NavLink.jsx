@@ -13,11 +13,23 @@ const CustomLink = styled(Link)`
   line-height: 1.2;
   color: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
 
-  ${(props) => props.mobileMenuLink && css``}
+  ${(props) =>
+    props.$mobileMenuLink &&
+    css`
+      font-size: 40px;
+      pointer-events: ${(props) => (props.$menuActive ? "auto" : "none")};
+    `}
 
   &.active {
-    border-bottom: 1px solid
+    border-bottom: 1.5px solid
       ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+
+    ${(props) =>
+      props.$mobileMenuLink &&
+      css`
+        border-bottom: 4px solid
+          ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+      `}
   }
 `;
 
@@ -27,6 +39,8 @@ export default function NavLink({
   active,
   theme,
   mobileMenuLink,
+  menuActive,
+  index,
 }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
@@ -38,7 +52,9 @@ export default function NavLink({
       onMouseEnter={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")}
       $theme={theme}
-      mobileMenuLink={mobileMenuLink}
+      $mobileMenuLink={mobileMenuLink}
+      $menuActive={menuActive}
+      $index={index}
     >
       {children}
     </CustomLink>

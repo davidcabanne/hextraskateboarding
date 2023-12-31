@@ -44,6 +44,19 @@ const Container = styled.section`
     `}
 
   ${(props) =>
+    props.$fullPage &&
+    css`
+      padding: 0px;
+
+      @media ${_var.device.tablet_max} {
+        padding: 0px;
+      }
+      @media ${_var.device.mobileL_max} {
+        padding: 0px;
+      }
+    `}
+
+  ${(props) =>
     props.$footer &&
     css`
       padding: ${_var.space_L} 0px 0px 0px;
@@ -56,7 +69,7 @@ const Container = styled.section`
     `}
 `;
 
-export default function Section({ fullScreen, footer, img }) {
+export default function Section({ fullScreen, fullPage, footer, img }) {
   // HOOK
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
@@ -67,6 +80,7 @@ export default function Section({ fullScreen, footer, img }) {
     <Container
       ref={containerRef}
       $fullScreen={fullScreen}
+      $fullPage={fullPage}
       $footer={footer}
       className={isVisible ? "active" : ""}
     >

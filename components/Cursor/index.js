@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import * as _var from "../../styles/variables";
 import useMousePosition from "../../hooks/useMousePosition";
@@ -22,8 +22,9 @@ const Svg = styled.svg`
   -webkit-transition-timing-function: ${_var.cubicBezier};
   transition-timing-function: ${_var.cubicBezier};
   transition: ${animationDuration} ${_var.cubicBezier};
-  transition-property: border, fill, transform;
+  transition-property: border, fill, opacity, transform;
   will-change: transform;
+  opacity: ${(props) => (props.$cursorActive ? 1 : 0)};
 
   &.active {
     fill: white;
@@ -33,8 +34,16 @@ const Svg = styled.svg`
 `;
 
 const Cursor = () => {
+  const [cursorActive, setCursorActive] = useState(false);
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
   const { x, y } = useMousePosition();
+
+  useEffect(() => {
+    if (x > 0) {
+      setCursorActive(true);
+    }
+  }, [x]);
+
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -45,6 +54,7 @@ const Cursor = () => {
       height="32px"
       style={{ left: `${x}px`, top: `${y}px` }}
       className={cursorType === "hovered" ? "active" : ""}
+      $cursorActive={cursorActive}
     >
       <g>
         <circle className="st0" cx="16" cy="16" r="16" />

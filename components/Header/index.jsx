@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
 import useScrollPosition from "@/hooks/useScrollPosition";
+import useWindowWidth from "@/hooks/useWindowWidth";
 
 import styled from "styled-components";
 import * as _var from "@/styles/variables";
@@ -56,6 +57,8 @@ export default function Header({ handleRenderTheme, theme }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
 
+  const innerWidth = useWindowWidth();
+
   const handleMenu = () => {
     setMenuActive(!menuActive);
   };
@@ -63,13 +66,19 @@ export default function Header({ handleRenderTheme, theme }) {
   const scrollPosition = useScrollPosition();
 
   useEffect(() => {
-    if (scrollPosition > 0) {
+    if (innerWidth >= 770 && menuActive) {
+      setMenuActive(false);
+    }
+  }, [innerWidth]);
+
+  useEffect(() => {
+    if (scrollPosition > 0 && innerWidth >= 770) {
       setHasScrolled(true);
     }
-    if (scrollPosition === 0) {
+    if (scrollPosition === 0 && innerWidth >= 770) {
       setHasScrolled(false);
     }
-  }, [scrollPosition]);
+  }, [scrollPosition, innerWidth]);
 
   return (
     <Container $theme={theme} className={hasScrolled ? "active" : ""}>
