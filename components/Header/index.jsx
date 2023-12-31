@@ -72,6 +72,15 @@ export default function Header({ handleRenderTheme, theme }) {
   }, [innerWidth]);
 
   useEffect(() => {
+    const body = document.body;
+    if (menuActive) {
+      body.classList.add("menuActive");
+    } else {
+      body.classList.remove("menuActive");
+    }
+  }, [menuActive]);
+
+  useEffect(() => {
     if (scrollPosition > 0 && innerWidth >= 770) {
       setHasScrolled(true);
     }
