@@ -3,10 +3,10 @@ import { MouseContext } from "@/context/mouseContext";
 // import useScrollDir from "@/hooks/useScrollDir";
 import useScrollPosition from "@/hooks/useScrollPosition";
 
-import Link from "next/link";
 import styled from "styled-components";
 import * as _var from "@/styles/variables";
 
+import NavLink from "./NavLink";
 import Logo from "./Logo";
 
 const lightTheme = "rgba(255, 255, 255, 0.25)";
@@ -79,6 +79,18 @@ const Nav = styled.nav`
   }
 `;
 
+const NavLinks = styled.ul`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${_var.space_M};
+  list-style: none;
+
+  & a {
+    cursor: none;
+  }
+`;
+
 const Svg = styled.svg`
   opacity: 0;
   transform: rotate(0deg);
@@ -110,14 +122,13 @@ export default function Header({ handleRenderTheme, theme }) {
   return (
     <Container $theme={theme} className={hasScrolled ? "active" : ""}>
       <Nav>
-        <Link
-          href="/"
-          style={{ cursor: "none" }}
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
-        >
-          <Logo theme={theme} />
-        </Link>
+        <NavLinks>
+          <NavLink link="/">
+            <Logo theme={theme} />
+          </NavLink>
+          <NavLink link="lookbook">Lookbook</NavLink>
+          <NavLink link="boards">Boards</NavLink>
+        </NavLinks>
         <Svg
           height="24"
           viewBox="0 0 24 24"

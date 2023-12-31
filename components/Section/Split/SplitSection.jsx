@@ -16,7 +16,7 @@ const Container = styled.section`
 
   ${_var.revealAnimation}
 
-  @media ${_var.device.tablet_max} {
+  @media ${_var.device.laptop_max} {
     grid-template-columns: 1fr;
     gap: ${_var.space_M};
     padding: ${_var.space_M};
@@ -31,7 +31,7 @@ const Placeholder = styled.div`
   width: 100%;
   height: 100vh;
 
-  @media ${_var.device.tablet_max} {
+  @media ${_var.device.laptop_max} {
     height: 100%;
   }
 
@@ -41,8 +41,8 @@ const Placeholder = styled.div`
 
     max-height: 100vh;
 
-    @media ${_var.device.tablet_max} {
-      height: 100%;
+    @media ${_var.device.laptop_max} {
+      height: 50vh;
       max-height: 50vh;
     }
   }
@@ -52,7 +52,7 @@ const Svg = styled.svg`
   height: 100%;
   max-height: 100vh;
 
-  @media ${_var.device.tablet_max} {
+  @media ${_var.device.laptop_max} {
     display: none;
   }
 `;
@@ -63,7 +63,7 @@ const SvgMobile = styled.svg`
   height: 100%;
   max-height: 100vh;
 
-  @media ${_var.device.tablet_max} {
+  @media ${_var.device.laptop_max} {
     display: block;
     max-height: 50vh;
   }

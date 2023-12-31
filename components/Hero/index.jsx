@@ -4,6 +4,8 @@ import styled, { css } from "styled-components";
 import * as _var from "@/styles/variables";
 import { H1, H2, H3, H4 } from "../typefaces";
 
+const customBreakpoint = "(max-width: 1280px)";
+
 const Container = styled.section`
   position: relative;
   width: 100%;
@@ -18,6 +20,9 @@ const Container = styled.section`
   }
   @media ${_var.device.mobileL_max} {
     padding: ${_var.space_M} ${_var.space_S};
+  }
+
+  @media ${customBreakpoint} {
   }
 `;
 
@@ -105,7 +110,13 @@ const ColSecondary = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: min-content 1fr;
+  grid-template-columns: -webkit-min-content 1fr;
   z-index: -1;
+
+  @media ${customBreakpoint} {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr min-content;
+  }
 
   @media ${_var.device.tablet_max} {
     position: absolute;
@@ -133,9 +144,27 @@ const StyledImage = styled(Image)`
   }
 `;
 
-const Svg = styled.svg`
+const SvgV = styled.svg`
   height: 100%;
+  max-height: calc(100vh - 80px);
   padding-right: ${_var.space_L};
+
+  @media ${customBreakpoint} {
+    display: none;
+  }
+
+  @media ${_var.device.tablet_max} {
+    display: none;
+  }
+`;
+
+const SvgH = styled.svg`
+  display: none;
+  padding-top: ${_var.space_S};
+
+  @media ${customBreakpoint} {
+    display: block;
+  }
 
   @media ${_var.device.tablet_max} {
     display: none;
@@ -199,7 +228,7 @@ export default function Hero({ imgs }) {
           </Infos>
         </ColPrimary>
         <ColSecondary>
-          <Svg
+          <SvgV
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
@@ -216,7 +245,7 @@ export default function Hero({ imgs }) {
               />
               <path d="M199.9,163.4L0,114.1V49.6L199.9,0v32.7L157,43.5v76.8l42.9,10.8V163.4z M27.1,89l101.3,24.8V49.9L27.1,74.4V89z" />
             </g>
-          </Svg>
+          </SvgV>
           <Placeholder ref={placeholderRef}>
             {imgs.map((item) => {
               const { index, img } = item;
@@ -235,6 +264,24 @@ export default function Hero({ imgs }) {
               );
             })}
           </Placeholder>
+          <SvgH
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            viewBox="0 0 272.1 54.4"
+          >
+            <g>
+              <path d="M32.3,54.3V30.8H8.8v23.5H0V0h8.8v23.2h23.5V0h8.8v54.3H32.3z" />
+              <path d="M53.6,54.3V0h34.3v7.7H62.4v15.4h20.7v7.6H62.4v15.9h25.5v7.8L53.6,54.3L53.6,54.3z" />
+              <path d="M102.1,0l11.7,21.4L125.6,0h9.3l-16.1,27.6l16.1,26.7h-9.8l-11.6-20.5l-11.9,20.5h-9.3L108.5,28L92.2,0H102.1z" />
+              <path d="M137,7.9V0h39.6v7.9h-15.3v46.5h-8.9V7.9C152.4,7.9,137,7.9,137,7.9z" />
+              <path
+                d="M192.7,35v19.3h-8.8V0h20.6c12.3,0,18.4,5.8,18.4,17.3c0,7.7-3,13-8.9,15.7l9,21.3h-9.7L205.5,35H192.7z M213.9,17.4
+		c0-6.5-3.1-9.8-9.4-9.8h-11.8v19.8h12c3.2,0,5.5-0.9,7-2.7C213.1,22.8,213.9,20.4,213.9,17.4z"
+              />
+              <path d="M227.7,54.3L241.1,0h17.5l13.5,54.3h-8.9l-2.9-11.7h-20.9l-2.9,11.7H227.7z M247.9,7.4l-6.7,27.5h17.3l-6.6-27.5H247.9z" />
+            </g>
+          </SvgH>
         </ColSecondary>
       </Grid>
     </Container>

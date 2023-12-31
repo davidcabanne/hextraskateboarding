@@ -11,6 +11,7 @@ const Placeholder = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: calc(100vh - 160px);
   aspect-ratio: 1 / 1;
 
   ${_var.revealAnimation}
