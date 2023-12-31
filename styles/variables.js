@@ -5,6 +5,9 @@ export const mono_010 = "#FFFFFF";
 
 export const headerHeight = "120px";
 
+export const lightTheme = "rgba(255, 255, 255, 0.25)";
+export const darkTheme = "rgba(0, 0, 0, 0.75)";
+
 // MEDIA QUERIES
 //
 const deviceSize = {
