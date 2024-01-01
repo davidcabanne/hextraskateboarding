@@ -3,6 +3,7 @@ import styled from "styled-components";
 import * as _var from "../styles/variables";
 
 import Header from "@/components/Header";
+import Footer from "./Footer";
 
 const Container = styled.main`
   position: relative;
@@ -14,6 +15,7 @@ export default function Layout({ handleRenderTheme, theme, children }) {
     <Container>
       <Header handleRenderTheme={handleRenderTheme} theme={theme} />
       {children}
+      <Footer />
     </Container>
   );
 }

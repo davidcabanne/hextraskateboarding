@@ -17,7 +17,16 @@ const Container = styled.section`
   align-items: center;
   padding: ${_var.space_L};
 
-  ${_var.revealAnimation}
+  ${(props) =>
+    props.$reveal &&
+    css`
+      ${_var.revealAnimation}
+    `}
+  ${(props) =>
+    props.$fadeIn &&
+    css`
+      ${_var.fadeInAnimation}
+    `}
 
   @media ${_var.device.tablet_max} {
     padding: ${_var.space_M};
@@ -69,7 +78,14 @@ const Container = styled.section`
     `}
 `;
 
-export default function Section({ fullScreen, fullPage, footer, img }) {
+export default function Section({
+  fullScreen,
+  fullPage,
+  footer,
+  img,
+  reveal,
+  fadeIn,
+}) {
   // HOOK
   const [containerRef, isVisible] = useElementOnScreen({
     root: null,
@@ -82,6 +98,8 @@ export default function Section({ fullScreen, fullPage, footer, img }) {
       $fullScreen={fullScreen}
       $fullPage={fullPage}
       $footer={footer}
+      $reveal={reveal}
+      $fadeIn={fadeIn}
       className={isVisible ? "active" : ""}
     >
       <Placeholder footer={footer}>
