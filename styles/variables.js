@@ -58,9 +58,22 @@ opacity: 0.15;
   transition: ${animationCustomTiming} ${cubicBezier};
   transition-property: opacity, transform;
 
+  @media ${device.tablet_max} {
+    transform: translateY(8px);
+  }
+
   &.active {
     opacity: 1;
     transform: translateY(0px);
+  }
+`;
+export const fadeInAnimation = `
+opacity: 0.15;
+  transition: ${animationCustomTiming} ${cubicBezier};
+  transition-property: opacity;
+
+  &.active {
+    opacity: 1;
   }
 `;
 export const rootMargin = "0px 0px -32px 0px";

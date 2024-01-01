@@ -9,8 +9,8 @@ import product_board_2 from "../../public/photos/Board-2---Bloc-5.jpg";
 export default function Home({ handleRenderTheme, theme }) {
   return (
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-      <Section fullPage img={product_board_1} />
-      <Section fullPage img={product_board_2} />
+      <Section fullPage img={product_board_1} fadeIn />
+      <Section fullPage img={product_board_2} fadeIn />
     </Layout>
   );
 }

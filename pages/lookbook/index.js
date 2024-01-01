@@ -9,8 +9,8 @@ import product_hextraShift_2 from "../../public/photos/Amiel---Bloc-3.jpg";
 export default function Home({ handleRenderTheme, theme }) {
   return (
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-      <Section fullPage img={product_hextraShift_1} />
-      <Section fullPage img={product_hextraShift_2} />
+      <Section fullPage img={product_hextraShift_1} fadeIn />
+      <Section fullPage img={product_hextraShift_2} fadeIn />
     </Layout>
   );
 }

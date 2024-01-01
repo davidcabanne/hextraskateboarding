@@ -14,7 +14,6 @@ import VideoPlaceholder from "@/components/Section/Video/VideoPlaceholder";
 import VideoText from "@/components/Section/Video/VideoText";
 
 import SplitSection from "@/components/Section/Split/SplitSection";
-import Footer from "@/components/Footer";
 
 import { H1, H2 } from "../components/typefaces";
 
@@ -70,6 +69,7 @@ const video_almost_there = {
 };
 
 import bloc_5_briggo from "../public/photos/Briggo---Bloc-5.jpg";
+
 import footer_img from "../public/photos/Amiel---Bloc-8.jpg";
 
 export default function Home({ handleRenderTheme, theme }) {
@@ -77,7 +77,7 @@ export default function Home({ handleRenderTheme, theme }) {
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
       <Hero imgs={heroes} />
 
-      <Section fullScreen img={bloc_2_briggo} />
+      <Section fullScreen img={bloc_2_briggo} reveal />
 
       <ProductSection alignRight>
         <ProductImages>
@@ -107,7 +107,7 @@ export default function Home({ handleRenderTheme, theme }) {
         </ProductText>
       </ProductSection>
 
-      <Section fullScreen img={bloc_5_briggo} />
+      <Section fullScreen img={bloc_5_briggo} reveal />
 
       <VideoSection>
         <VideoPlaceholder data={video_almost_there} />
@@ -122,8 +122,7 @@ export default function Home({ handleRenderTheme, theme }) {
 
       <SplitSection imgs={[hero_MTV, split_laurent]} />
 
-      <Section footer img={footer_img} />
-      <Footer />
+      <Section footer img={footer_img} reveal />
     </Layout>
   );
 }
