@@ -91,7 +91,7 @@ export default function Header({ handleRenderTheme, theme }) {
 
   return (
     <Container $theme={theme} className={hasScrolled ? "active" : ""}>
-      <NavDesktop theme={theme} />
+      <NavDesktop theme={theme} handleRenderTheme={handleRenderTheme} />
       <NavMobile
         theme={theme}
         menuActive={menuActive}
