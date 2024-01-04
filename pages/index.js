@@ -42,22 +42,22 @@ const heroes = [
   {
     name: "David Cabanne",
     img: homeHeroDavidCabanne,
-    index: 2,
+    index: 1,
   },
   {
     name: "David Métivier",
     img: homeHeroDavidMétivier,
-    index: 3,
+    index: 2,
   },
   {
     name: "Laurent Royer",
     img: homeHeroLaurentRoyer,
-    index: 4,
+    index: 3,
   },
   {
     name: "Gabriel Renault",
     img: homeHeroGabrielRenault,
-    index: 5,
+    index: 4,
   },
 ];
 
@@ -157,7 +157,7 @@ export default function Home({ handleRenderTheme, theme }) {
 
       <SplitSection imgs={[sectionSplitMtvPrimary, sectionSplitMtvSecondary]} />
 
-      <Section footer img={sectionFullPageFooter} reveal />
+      <Section footer footerFade img={sectionFullPageFooter} reveal />
 
       <Footer />
     </Layout>

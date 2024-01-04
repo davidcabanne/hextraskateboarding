@@ -84,7 +84,7 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
               active={`${pathname}` === "/lookbook"}
               theme={theme}
             >
-              Look book
+              Lookbook
             </NavLink>
           </li>
           <li>

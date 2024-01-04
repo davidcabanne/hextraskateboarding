@@ -36,7 +36,7 @@ import sectionProductScarfPrimary from "../../public/pictures/lookbook/hextraSka
 import sectionProductScarfSecondary from "../../public/pictures/lookbook/hextraSkateboarding-lookbookProduct-scarf-02.jpg";
 
 const hero = {
-  title: "Look Book",
+  title: "Hextra Lookbook",
   subtitle:
     "Fabriquées/chiné en France, résistant aux chutes les plus violentes.",
   groupTitle: "Direction Artistique",
@@ -122,7 +122,7 @@ export default function Home({ handleRenderTheme, theme }) {
       </ProductSection>
 
       <Section footer img={sectionFullPageFooter} reveal />
-      <Footer theme={theme} />
+      <Footer footerLight theme={theme} />
     </Layout>
   );
 }

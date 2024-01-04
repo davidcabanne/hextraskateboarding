@@ -32,7 +32,7 @@ import sectionProductGeorgeBriggsPrimary from "../../public/pictures/skateboards
 import sectionProductLaurentRoyerSecondary from "../../public/pictures/skateboards/hextraSkateboarding-skateboardsProduct-laurentRoyer-02.jpg";
 
 const hero = {
-  title: "Skateboards",
+  title: "Hextra Skateboards",
   subtitle: "Fabriquées dans un atelier français à moins de 200km de Bordeaux",
   groupTitle: "Direction Artistique",
   groupText: "Théo Chapdelaine",
@@ -98,7 +98,7 @@ export default function Home({ handleRenderTheme, theme }) {
         </ProductImages>
       </ProductSection>
 
-      <Section footer img={sectionFullPageFooter} reveal />
+      <Section footer footerFade img={sectionFullPageFooter} reveal />
       <Footer theme={theme} />
     </Layout>
   );

@@ -4,7 +4,6 @@ import useElementOnScreen from "../../hooks/useElementOnScreen";
 
 import styled, { css } from "styled-components";
 import * as _var from "../../styles/variables";
-import { H1, H2, H3, H4 } from "../typefaces";
 
 import Placeholder from "./Placeholder";
 
@@ -104,6 +103,7 @@ export default function Section({
   fullScreen,
   fullPage,
   footer,
+  footerFade,
   img,
   reveal,
   fadeIn,
@@ -125,7 +125,7 @@ export default function Section({
       $fadeIn={fadeIn}
       className={isVisible ? "active" : ""}
     >
-      <Placeholder footer={footer}>
+      <Placeholder footer={footer} footerFade={footerFade}>
         <Text $textColor={textColor}>{children}</Text>
         <Image
           src={img}

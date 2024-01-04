@@ -9,7 +9,7 @@ const Container = styled.div`
   min-height: inherit;
 
   ${(props) =>
-    props.$footer &&
+    props.$footerFade &&
     css`
       &::after {
         content: "";
@@ -23,6 +23,6 @@ const Container = styled.div`
     `}
 `;
 
-export default function Placeholder({ footer, children }) {
-  return <Container $footer={footer}>{children}</Container>;
+export default function Placeholder({ footer, footerFade, children }) {
+  return <Container $footerFade={footerFade}>{children}</Container>;
 }

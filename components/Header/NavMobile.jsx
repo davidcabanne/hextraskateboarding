@@ -143,6 +143,16 @@ export default function NavDesktop({
       <Menu $theme={theme} className={menuActive ? "active" : ""}>
         <NavLinks>
           <NavLink
+            link="/"
+            active={`${pathname}` === "/"}
+            theme={theme}
+            mobileMenuLink
+            menuActive={menuActive}
+            index={0}
+          >
+            Home
+          </NavLink>
+          <NavLink
             link="lookbook"
             active={`${pathname}` === "/lookbook"}
             theme={theme}
