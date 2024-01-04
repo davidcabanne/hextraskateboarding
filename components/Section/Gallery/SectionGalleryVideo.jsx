@@ -28,6 +28,10 @@ const Container = styled.section`
       ${_var.fadeInAnimation}
     `}
   @media ${_var.device.tablet_max} {
+    padding: ${_var.space_M};
+  }
+  @media ${_var.device.mobileL_max} {
+    padding: ${_var.space_S};
   }
 `;
 
@@ -41,6 +45,9 @@ const Gallery = styled.div`
 
   & div {
     aspect-ratio: 1.33;
+  }
+  @media ${_var.device.tablet_max} {
+    grid-template-columns: 1fr;
   }
 `;
 
