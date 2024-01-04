@@ -22,7 +22,7 @@ import ButtonPrimary from "@/components/Button/ButtonPrimary";
 
 // PICTURES
 import homeHeroGeorgeBriggs from "../public/pictures/home/hextraSkateboarding-homeHero-georgeBriggs-01.jpg";
-import homeHeroAmielCoralia from "../public/pictures/home/hextraSkateboarding-homeHero-AmielCoralia-002.jpg";
+// import homeHeroAmielCoralia from "../public/pictures/home/hextraSkateboarding-homeHero-AmielCoralia-002.jpg";
 import homeHeroDavidCabanne from "../public/pictures/home/hextraSkateboarding-homeHero-davidCabanne-03.jpg";
 import homeHeroDavidMétivier from "../public/pictures/home/hextraSkateboarding-homeHero-davidMétivier-04.jpg";
 import homeHeroLaurentRoyer from "../public/pictures/home/hextraSkateboarding-homeHero-laurentRoyer-05.jpg";
@@ -34,11 +34,11 @@ const heroes = [
     img: homeHeroGeorgeBriggs,
     index: 0,
   },
-  {
-    name: "Amiel Coralia",
-    img: homeHeroAmielCoralia,
-    index: 1,
-  },
+  // {
+  //   name: "Amiel Coralia",
+  //   img: homeHeroAmielCoralia,
+  //   index: 1,
+  // },
   {
     name: "David Cabanne",
     img: homeHeroDavidCabanne,
