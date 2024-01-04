@@ -9,12 +9,13 @@ import * as _var from "@/styles/variables";
 import NavLink from "./NavLink";
 import Logo from "./Logo";
 
-const Nav = styled.nav`
+const Container = styled.div`
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: ${_var.space_M};
   padding-top: ${_var.space_M};
   padding-bottom: ${_var.space_M};
   margin: 0px ${_var.space_L};
@@ -32,6 +33,13 @@ const Nav = styled.nav`
     padding-bottom: ${_var.space_S};
     margin: 0px ${_var.space_S};
   }
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${_var.space_M};
 `;
 
 const NavLinks = styled.ul`
@@ -64,44 +72,53 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   return (
-    <Nav>
-      <NavLinks>
-        <li>
-          <NavLink link="/" theme={theme}>
-            <Logo theme={theme} />
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            link="lookbook"
-            active={`${pathname}` === "/lookbook"}
-            theme={theme}
-          >
-            Lookbook
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            link="boards"
-            active={`${pathname}` === "/boards"}
-            theme={theme}
-          >
-            Boards
-          </NavLink>
-        </li>
-      </NavLinks>
-      <Svg
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        xmlns="http://www.w3.org/2000/svg"
-        onClick={() => handleRenderTheme(theme)}
-        className={theme ? "active" : ""}
-        onMouseEnter={() => cursorChangeHandler("hovered")}
-        onMouseLeave={() => cursorChangeHandler("")}
-      >
-        <path d="m12 22c5.5228475 0 10-4.4771525 10-10s-4.4771525-10-10-10-10 4.4771525-10 10 4.4771525 10 10 10zm0-1.5v-17c4.6944204 0 8.5 3.80557963 8.5 8.5 0 4.6944204-3.8055796 8.5-8.5 8.5z" />
-      </Svg>
-    </Nav>
+    <Container>
+      <NavLink link="/" theme={theme}>
+        <Logo theme={theme} />
+      </NavLink>
+      <Nav>
+        <NavLinks>
+          <li>
+            <NavLink
+              link="lookbook"
+              active={`${pathname}` === "/lookbook"}
+              theme={theme}
+            >
+              Look book
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              link="skateboards"
+              active={`${pathname}` === "/skateboards"}
+              theme={theme}
+            >
+              Skateboards
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              link="videos"
+              active={`${pathname}` === "/videos"}
+              theme={theme}
+            >
+              Videos
+            </NavLink>
+          </li>
+        </NavLinks>
+        <Svg
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+          onClick={() => handleRenderTheme(theme)}
+          className={theme ? "active" : ""}
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+        >
+          <path d="m12 22c5.5228475 0 10-4.4771525 10-10s-4.4771525-10-10-10-10 4.4771525-10 10 4.4771525 10 10 10zm0-1.5v-17c4.6944204 0 8.5 3.80557963 8.5 8.5 0 4.6944204-3.8055796 8.5-8.5 8.5z" />
+        </Svg>
+      </Nav>
+    </Container>
   );
 }

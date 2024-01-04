@@ -29,7 +29,7 @@ const Svg = styled.svg`
   &.active {
     fill: white;
     border: 1px solid black;
-    transform: translate(-16px, -16px) rotate(90deg) scale(1.2);
+    transform: translate(-16px, -16px) rotate(180deg) scale(1.2);
   }
 `;
 

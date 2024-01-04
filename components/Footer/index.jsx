@@ -15,9 +15,23 @@ const Container = styled.footer`
   color: ${_var.mono_010};
   padding: ${_var.space_L};
 
+  ${(props) =>
+    props.$footerLight &&
+    css`
+      background: ${(props) => (props.$theme ? _var.mono_010 : _var.mono_000)};
+      transition: background 200ms ${_var.cubicBezier};
+
+      & span > h5 {
+        color: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+      }
+      & div > a > svg {
+        fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+      }
+    `}
+
   @media ${_var.device.tablet_max} {
     grid-template-columns: 1fr;
-    padding-bottom: ${_var.space_XL};
+    padding-bottom: ${_var.space_L};
   }
 
   & span:nth-child(1) {
@@ -48,16 +62,16 @@ const Container = styled.footer`
 
     @media ${_var.device.tablet_max} {
       justify-self: center;
-      padding-top: ${_var.space_L};
+      padding-top: ${_var.space_S};
     }
   }
 `;
 
-export default function Footer() {
+export default function Footer({ footerLight, theme }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   return (
-    <Container>
+    <Container $footerLight={footerLight} $theme={theme}>
       <span>
         <H5>Hextra Skateboarding</H5>
       </span>

@@ -32,6 +32,7 @@ const Container = styled.header`
     transition-delay: 200ms, 0ms;
   }
 
+  & nav,
   & nav > svg {
     opacity: 0;
     pointer-events: none;
@@ -44,6 +45,7 @@ const Container = styled.header`
       transition-delay: 10ms, 0ms;
     }
 
+    & nav,
     & nav > svg {
       opacity: 1;
       pointer-events: auto;

@@ -153,14 +153,24 @@ export default function NavDesktop({
             Lookbook
           </NavLink>
           <NavLink
-            link="boards"
-            active={`${pathname}` === "/boards"}
+            link="skateboards"
+            active={`${pathname}` === "/skateboards"}
             theme={theme}
             mobileMenuLink
             menuActive={menuActive}
             index={1}
           >
-            Boards
+            Skateboards
+          </NavLink>
+          <NavLink
+            link="videos"
+            active={`${pathname}` === "/videos"}
+            theme={theme}
+            mobileMenuLink
+            menuActive={menuActive}
+            index={2}
+          >
+            Videos
           </NavLink>
         </NavLinks>
       </Menu>

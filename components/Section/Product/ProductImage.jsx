@@ -5,7 +5,9 @@ import * as _var from "../../../styles/variables";
 
 const Placeholder = styled.div`
   width: 100%;
+  min-width: 35vw;
   max-width: 600px;
+  max-height: 90vh;
   aspect-ratio: 2 / 3;
 
   & img {

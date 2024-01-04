@@ -4,6 +4,7 @@ import useElementOnScreen from "../../hooks/useElementOnScreen";
 
 import styled, { css } from "styled-components";
 import * as _var from "../../styles/variables";
+import { H1, H2, H3, H4 } from "../typefaces";
 
 import Placeholder from "./Placeholder";
 
@@ -78,13 +79,35 @@ const Container = styled.section`
     `}
 `;
 
+const Text = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: ${_var.space_XL};
+  z-index: 1;
+
+  @media ${_var.device.tablet_max} {
+    padding: ${_var.space_L};
+  }
+  @media ${_var.device.mobileL_max} {
+    padding: ${_var.space_M};
+  }
+
+  & h2 {
+    color: ${(props) => props.$textColor};
+    text-align: right;
+  }
+`;
+
 export default function Section({
+  children,
   fullScreen,
   fullPage,
   footer,
   img,
   reveal,
   fadeIn,
+  textColor,
 }) {
   // HOOK
   const [containerRef, isVisible] = useElementOnScreen({
@@ -103,6 +126,7 @@ export default function Section({
       className={isVisible ? "active" : ""}
     >
       <Placeholder footer={footer}>
+        <Text $textColor={textColor}>{children}</Text>
         <Image
           src={img}
           fill

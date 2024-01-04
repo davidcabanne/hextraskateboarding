@@ -12,6 +12,11 @@ const Container = styled.section`
   align-items: ${(props) => (props.$alignRight ? "flex-end" : "flex-start")};
   padding: ${_var.space_L};
 
+  & h1,
+  h2 {
+    text-align: ${(props) => (props.$alignRight ? "end" : "start")};
+  }
+
   @media ${_var.device.tablet_max} {
     align-items: flex-start;
     padding: ${_var.space_M};

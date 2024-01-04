@@ -8,11 +8,17 @@ import * as _var from "@/styles/variables";
 
 const Placeholder = styled.div`
   position: relative;
+  width: 100%;
+  height: 100%;
+  /* max-height: calc(100vh - 160px); */
+  max-height: 100vh;
+  max-width: 100vh;
+  aspect-ratio: 1.33;
+  overflow: hidden;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: calc(100vh - 160px);
-  aspect-ratio: 1 / 1;
 
   ${_var.revealAnimation}
 
