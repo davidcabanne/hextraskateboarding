@@ -69,6 +69,7 @@ const Menu = styled.div`
   z-index: -1;
   transition: 200ms ${_var.cubicBezier};
   transition-property: opacity;
+  pointer-events: none;
 
   &.active {
     opacity: 1;
@@ -87,9 +88,13 @@ const NavLinks = styled.ul`
   gap: ${_var.space_M};
   list-style: none;
 
-  & a {
+  /* & a {
     cursor: none;
-  }
+
+    @media ${_var.device.tablet_max} {
+      cursor: pointer;
+    }
+  } */
 `;
 
 const Svg = styled.svg`
@@ -101,6 +106,10 @@ const Svg = styled.svg`
 
   &.active {
     transform: rotate(180deg);
+  }
+
+  @media ${_var.device.tablet_max} {
+    cursor: pointer;
   }
 `;
 

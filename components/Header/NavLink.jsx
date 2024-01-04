@@ -12,6 +12,11 @@ const CustomLink = styled(Link)`
   text-transform: uppercase;
   line-height: 1.2;
   color: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+  cursor: none;
+
+  @media ${_var.device.tablet_max} {
+    cursor: pointer;
+  }
 
   ${(props) =>
     props.$mobileMenuLink &&
@@ -47,7 +52,6 @@ export default function NavLink({
   return (
     <CustomLink
       href={link}
-      style={{ cursor: "none" }}
       className={active ? "active" : ""}
       onMouseEnter={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")}

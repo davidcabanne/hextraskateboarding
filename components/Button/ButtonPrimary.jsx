@@ -13,6 +13,10 @@ const Container = styled(Link)`
   & h2 {
     font-style: italic;
   }
+
+  @media ${_var.device.tablet_max} {
+    cursor: pointer;
+  }
 `;
 
 export default function ButtonPrimary({ link }) {

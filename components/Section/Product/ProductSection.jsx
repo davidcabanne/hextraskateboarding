@@ -20,6 +20,10 @@ const Container = styled.section`
   @media ${_var.device.tablet_max} {
     align-items: flex-start;
     padding: ${_var.space_M};
+    & h1,
+    h2 {
+      text-align: start;
+    }
   }
   @media ${_var.device.mobileL_max} {
     padding: ${_var.space_S};

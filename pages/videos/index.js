@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { MouseContext } from "@/context/mouseContext";
 
 import Layout from "@/components/Layout";
 import Section from "@/components/Section/Section";
@@ -54,7 +55,12 @@ const gallery = [
   { img: videoGalleryNextDoor, alt: "", title: "Next Door", video: "" },
 ];
 
-export default function Home({ handleRenderTheme, theme }) {
+export default function Videos({ handleRenderTheme, theme }) {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  useEffect(() => {
+    cursorChangeHandler("");
+  }, []);
   return (
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
       <HeroPage data={hero} />

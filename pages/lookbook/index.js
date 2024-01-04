@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { MouseContext } from "@/context/mouseContext";
 import * as _var from "@/styles/variables";
 
 import Layout from "@/components/Layout";
@@ -51,7 +52,12 @@ const gallery = {
   alt: "alt",
 };
 
-export default function Home({ handleRenderTheme, theme }) {
+export default function Lookbook({ handleRenderTheme, theme }) {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  useEffect(() => {
+    cursorChangeHandler("");
+  }, []);
   return (
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
       <HeroPage data={hero} />

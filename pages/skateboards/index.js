@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { MouseContext } from "@/context/mouseContext";
 import * as _var from "@/styles/variables";
 
 import Layout from "@/components/Layout";
@@ -41,7 +42,12 @@ const hero = {
   img: heroSkateboards,
 };
 
-export default function Home({ handleRenderTheme, theme }) {
+export default function Skateboards({ handleRenderTheme, theme }) {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  useEffect(() => {
+    cursorChangeHandler("");
+  }, []);
   return (
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
       <HeroPage data={hero} />

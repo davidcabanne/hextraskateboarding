@@ -10,7 +10,6 @@ const Placeholder = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  /* max-height: calc(100vh - 160px); */
   max-height: 100vh;
   max-width: 100vh;
   aspect-ratio: 1.33;
@@ -27,6 +26,10 @@ const Placeholder = styled.div`
     z-index: 1;
     opacity: 1;
     transition: opacity 500ms ${_var.cubicBezier};
+
+    @media ${_var.device.tablet_max} {
+      cursor: pointer;
+    }
 
     &.active {
       opacity: 0;

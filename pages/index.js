@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { MouseContext } from "@/context/mouseContext";
+
 import * as _var from "@/styles/variables";
 
 import Layout from "@/components/Layout";
@@ -84,6 +86,12 @@ import sectionSplitMtvPrimary from "../public/pictures/home/hextraSkateboarding-
 import sectionSplitMtvSecondary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-02.jpg";
 
 export default function Home({ handleRenderTheme, theme }) {
+  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  useEffect(() => {
+    cursorChangeHandler("");
+  }, []);
+
   return (
     <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
       <Hero imgs={heroes} />

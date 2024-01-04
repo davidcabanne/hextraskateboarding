@@ -61,6 +61,9 @@ body {
   transition: background 200ms ${_var.cubicBezier};
 
   cursor: none;
+  @media ${_var.device.tablet_max} {
+    cursor: auto !important;
+  }
 }
 
 .menuActive {

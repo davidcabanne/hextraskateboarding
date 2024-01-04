@@ -43,6 +43,10 @@ const Container = styled.header`
     &::after {
       opacity: 1;
       transition-delay: 10ms, 0ms;
+
+      @media ${_var.device.tablet_max} {
+        display: none;
+      }
     }
 
     & nav,

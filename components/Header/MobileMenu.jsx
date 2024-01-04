@@ -8,6 +8,7 @@ import * as _var from "@/styles/variables";
 const Container = styled.div`
   position: relative;
   z-index: 9999;
+  cursor: pointer;
 
   & div {
     text-align: center;
