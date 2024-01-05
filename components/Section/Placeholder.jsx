@@ -21,8 +21,25 @@ const Container = styled.div`
         background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
       }
     `}
+
+  ${(props) =>
+    props.$flexCenter &&
+    css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & h1 {
+        color: ${_var.mono_010};
+        z-index: 10;
+      }
+    `}
 `;
 
-export default function Placeholder({ footer, footerFade, children }) {
-  return <Container $footerFade={footerFade}>{children}</Container>;
+export default function Placeholder({ footerFade, flexCenter, children }) {
+  return (
+    <Container $footerFade={footerFade} $flexCenter={flexCenter}>
+      {children}
+    </Container>
+  );
 }

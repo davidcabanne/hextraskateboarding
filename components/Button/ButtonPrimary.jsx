@@ -23,12 +23,14 @@ export default function ButtonPrimary({ link }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   return (
-    <Container
-      href={link}
-      onMouseEnter={() => cursorChangeHandler("hovered")}
-      onMouseLeave={() => cursorChangeHandler("")}
-    >
-      <H2> En savoir plus</H2>
+    <Container href={link}>
+      <H2
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")}
+      >
+        {" "}
+        En savoir plus
+      </H2>
     </Container>
   );
 }

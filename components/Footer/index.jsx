@@ -49,11 +49,16 @@ const Container = styled.footer`
   & div:nth-child(2) {
     justify-self: center;
     order: 2;
-    cursor: none;
+    & a {
+      cursor: none;
+    }
 
     @media ${_var.device.tablet_max} {
       order: 1;
-      cursor: pointer;
+
+      & a {
+        cursor: pointer;
+      }
     }
   }
 

@@ -5,7 +5,7 @@ import useElementOnScreen from "@/hooks/useElementOnScreen";
 
 import styled, { css } from "styled-components";
 import * as _var from "@/styles/variables";
-import { H2 } from "@/components/typefaces";
+import { H1, H2 } from "@/components/typefaces";
 
 import Placeholder from "../Placeholder";
 
@@ -51,15 +51,78 @@ const Gallery = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const ExtLink = styled.a`
+  position: relative;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  cursor: none;
+
+  @media ${_var.device.tablet_max} {
+    cursor: pointer;
+  }
 
   & h2 {
     margin-top: ${_var.space_S};
     font-weight: 600;
+    border-bottom: 4px solid transparent;
+    transition: 200ms ${_var.cubicBezier};
+    transition-property: border-bottom;
+    transition-delay: 50ms;
+  }
+
+  & h1 {
+    text-transform: uppercase;
+    opacity: 0;
+    transition: 300ms ${_var.cubicBezier};
+    transition-property: opacity;
+    transition-delay: 100ms;
+  }
+
+  & div {
+    overflow: hidden;
+
+    & img {
+      filter: grayscale(0);
+      transform: scale(1);
+      transition: 300ms ${_var.cubicBezier};
+      transition-property: filter, transform;
+      transition-delay: 100ms;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: ${_var.darkTheme};
+      opacity: 0;
+      pointer-events: none;
+      transition: 300ms ${_var.cubicBezier};
+      transition-property: opacity;
+    }
+  }
+
+  &:hover {
+    & div > img {
+      filter: grayscale(1);
+      transform: scale(1.025);
+    }
+
+    & h2 {
+      border-bottom: 4px solid ${_var.mono_000};
+    }
+
+    & h1 {
+      opacity: 1;
+    }
+
+    & div::after {
+      opacity: 1;
+    }
   }
 `;
 
@@ -81,20 +144,27 @@ export default function SectionGalleryVideo({ data, reveal, fadeIn }) {
     >
       <Gallery>
         {data.map((item) => (
-          <Wrapper key={item.title}>
-            <Placeholder>
+          <ExtLink
+            key={item.title}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            <Placeholder flexCenter>
+              <H1>Watch</H1>
               <Image
                 src={item.img}
                 fill
-                style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 placeholder="blur"
+                style={{ objectFit: "cover" }}
                 alt={item.alt}
-                onMouseEnter={() => cursorChangeHandler("hovered")}
-                onMouseLeave={() => cursorChangeHandler("")}
               />
             </Placeholder>
             <H2>{item.title}</H2>
-          </Wrapper>
+          </ExtLink>
         ))}
       </Gallery>
     </Container>

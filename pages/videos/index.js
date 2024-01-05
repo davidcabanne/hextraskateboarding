@@ -32,27 +32,42 @@ const hero = {
 };
 
 const gallery = [
-  { img: videoGalleryAlmostThere, alt: "", title: "Almost There", video: "" },
+  {
+    img: videoGalleryAlmostThere,
+    alt: "",
+    title: "Almost There",
+    link: "https://youtu.be/0WVK8aUEoQE?si=aL0hgSYWZ9niqM-B",
+  },
   {
     img: videoGalleryHextraHoursSecondary,
     alt: "",
     title: "Hextra Hours 02",
-    video: "",
+    link: "",
   },
   {
     img: videoGalleryFallWinter2022,
     alt: "",
     title: "Fall/Winter 2022",
-    video: "",
+    link: "https://youtu.be/Kul2Do281q4?si=snBBDroar-_kPYdd",
   },
-  { img: videoGalleryLautreRive, alt: "", title: "L'autre Rive", video: "" },
+  {
+    img: videoGalleryLautreRive,
+    alt: "",
+    title: "L'autre Rive",
+    link: "https://youtu.be/kHJTurVNsHI?si=27v_TWKZIuzF2dLv",
+  },
   {
     img: videoGalleryHextraHoursPrimary,
     alt: "",
     title: "Hextra Hours 01",
-    video: "",
+    link: "https://youtu.be/mLnTHUQlLmE?si=sKRGWQ3pvhE8Z0xZ",
   },
-  { img: videoGalleryNextDoor, alt: "", title: "Next Door", video: "" },
+  {
+    img: videoGalleryNextDoor,
+    alt: "",
+    title: "Next Door",
+    link: "https://youtu.be/hQfmnwwdUFE?si=EckGWzJADF55C7-o",
+  },
 ];
 
 export default function Videos({ handleRenderTheme, theme }) {

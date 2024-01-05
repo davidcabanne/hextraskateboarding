@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 import * as _var from "../../../styles/variables";
 
 const Placeholder = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
 
