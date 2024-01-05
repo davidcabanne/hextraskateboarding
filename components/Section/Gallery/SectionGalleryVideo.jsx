@@ -47,7 +47,7 @@ const Gallery = styled.div`
     aspect-ratio: 1.33;
   }
   @media ${_var.device.tablet_max} {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(100px, 1fr);
   }
 `;
 
