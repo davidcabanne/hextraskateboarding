@@ -38,13 +38,17 @@ const Container = styled.section`
 const Gallery = styled.div`
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: ${_var.space_L};
 
   & div {
     aspect-ratio: 1.33;
+  }
+
+  @media ${_var.device.desktop_max} {
+    grid-template-columns: 1fr 1fr;
   }
   @media ${_var.device.tablet_max} {
     grid-template-columns: minmax(100px, 1fr);

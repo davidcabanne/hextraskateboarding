@@ -21,9 +21,6 @@ const Container = styled.footer`
       background: ${(props) => (props.$theme ? _var.mono_010 : _var.mono_000)};
       transition: background 200ms ${_var.cubicBezier};
 
-      & span > h5 {
-        color: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
-      }
       & div > a > svg {
         fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
       }
@@ -80,7 +77,14 @@ export default function Footer({ footerLight, theme }) {
   return (
     <Container $footerLight={footerLight} $theme={theme}>
       <span>
-        <H5>Hextra Skateboarding</H5>
+        <H5
+          style={{
+            color:
+              footerLight && theme ? `${_var.mono_000}` : `${_var.mono_010}`,
+          }}
+        >
+          Hextra Skateboarding
+        </H5>
       </span>
       <div>
         <Link
@@ -93,7 +97,14 @@ export default function Footer({ footerLight, theme }) {
         </Link>
       </div>
       <span>
-        <H5>contact@hextraskateboarding.com</H5>
+        <H5
+          style={{
+            color:
+              footerLight && theme ? `${_var.mono_000}` : `${_var.mono_010}`,
+          }}
+        >
+          contact@hextraskateboarding.com
+        </H5>
       </span>
     </Container>
   );
