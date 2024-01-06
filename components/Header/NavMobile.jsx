@@ -156,46 +156,54 @@ export default function NavDesktop({
       </Header>
       <Menu $theme={theme} className={menuActive ? "active" : ""}>
         <NavLinks>
-          <NavLink
-            link="/"
-            active={`${pathname}` === "/"}
-            theme={theme}
-            mobileMenuLink
-            menuActive={menuActive}
-            index={0}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            link="lookbook"
-            active={`${pathname}` === "/lookbook"}
-            theme={theme}
-            mobileMenuLink
-            menuActive={menuActive}
-            index={0}
-          >
-            Lookbook
-          </NavLink>
-          <NavLink
-            link="skateboards"
-            active={`${pathname}` === "/skateboards"}
-            theme={theme}
-            mobileMenuLink
-            menuActive={menuActive}
-            index={1}
-          >
-            Skateboards
-          </NavLink>
-          <NavLink
-            link="videos"
-            active={`${pathname}` === "/videos"}
-            theme={theme}
-            mobileMenuLink
-            menuActive={menuActive}
-            index={2}
-          >
-            Videos
-          </NavLink>
+          <li>
+            <NavLink
+              link="/"
+              active={`${pathname}` === "/"}
+              theme={theme}
+              mobileMenuLink
+              menuActive={menuActive}
+              index={0}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              link="lookbook"
+              active={`${pathname}` === "/lookbook"}
+              theme={theme}
+              mobileMenuLink
+              menuActive={menuActive}
+              index={0}
+            >
+              Lookbook
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              link="skateboards"
+              active={`${pathname}` === "/skateboards"}
+              theme={theme}
+              mobileMenuLink
+              menuActive={menuActive}
+              index={1}
+            >
+              Skateboards
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              link="videos"
+              active={`${pathname}` === "/videos"}
+              theme={theme}
+              mobileMenuLink
+              menuActive={menuActive}
+              index={2}
+            >
+              Videos
+            </NavLink>
+          </li>
         </NavLinks>
       </Menu>
     </Container>
