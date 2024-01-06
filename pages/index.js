@@ -79,7 +79,7 @@ const video_almost_there = {
   title: "Hextra Skateboarding | ALMOST THERE",
   src: "https://www.youtube.com/embed/0WVK8aUEoQE?si=B31ktaGrU3HrwpXY",
   img: sectionVideo,
-  alt: "alt test",
+  alt: "Artwork de la vidéo part Almost There de David Métivier pour Hextra Skateboarding",
 };
 
 import sectionSplitMtvPrimary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-01.jpg";
@@ -120,7 +120,12 @@ export default function Home({ handleRenderTheme, theme }) {
             Fabriqué ou chiné en France, résistant aux chutes les plus
             violentes.
           </H2>
-          <ButtonPrimary link="/lookbook" />
+          <ButtonPrimary
+            link="/lookbook"
+            ariaLabel="En savoir plus en visitant notre page lookbook"
+            theme={theme}
+            alignRight
+          />
         </ProductText>
       </ProductSection>
 
@@ -135,7 +140,11 @@ export default function Home({ handleRenderTheme, theme }) {
             Fabriquées dans un atelier français à moins de 200km de Bordeaux.
             Composée de 7 plis d'érable canadien, certifié PEFC.
           </H2>
-          <ButtonPrimary link="/skateboards" />
+          <ButtonPrimary
+            link="/skateboards"
+            riaLabel="En savoir plus en visitant notre page skateboards"
+            theme={theme}
+          />
         </ProductText>
       </ProductSection>
 

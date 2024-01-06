@@ -31,6 +31,7 @@ const Container = styled.div`
 
       & h1 {
         color: ${_var.mono_010};
+        background: none;
         z-index: 10;
       }
     `}

@@ -6,8 +6,9 @@ import * as _var from "../../../styles/variables";
 const Text = styled.div`
   display: flex;
   flex-direction: column;
+
   gap: ${_var.space_XS};
-  text-align: ${(props) => (props.$alignRight ? "end" : "start")};
+  text-align: ${(props) => (props.$alignRight ? "start" : "end")};
   padding: ${_var.space_L} ${_var.space_L} 0px ${_var.space_L};
   max-width: 68ch;
 

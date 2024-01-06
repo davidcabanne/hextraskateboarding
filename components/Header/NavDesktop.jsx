@@ -73,7 +73,11 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
 
   return (
     <Container>
-      <NavLink link="/" theme={theme}>
+      <NavLink
+        link="/"
+        theme={theme}
+        aria-label="Hextra Skateboarding Homepage"
+      >
         <Logo theme={theme} />
       </NavLink>
       <Nav>
@@ -115,6 +119,7 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
           className={theme ? "active" : ""}
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")}
+          aria-label={theme ? "Toggle light mode" : "Toggle dark mode"}
         >
           <path d="m12 22c5.5228475 0 10-4.4771525 10-10s-4.4771525-10-10-10-10 4.4771525-10 10 4.4771525 10 10 10zm0-1.5v-17c4.6944204 0 8.5 3.80557963 8.5 8.5 0 4.6944204-3.8055796 8.5-8.5 8.5z" />
         </Svg>

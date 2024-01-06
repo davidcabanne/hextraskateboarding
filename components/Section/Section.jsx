@@ -95,6 +95,7 @@ const Text = styled.div`
   & h2 {
     color: ${(props) => props.$textColor};
     text-align: right;
+    background: none;
   }
 `;
 

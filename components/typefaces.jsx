@@ -56,7 +56,7 @@ export const H4 = styled.h4`
   }
 `;
 
-export const H5 = styled.h5`
+export const H5 = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: 1.45;

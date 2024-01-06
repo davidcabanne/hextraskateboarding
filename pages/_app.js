@@ -97,6 +97,7 @@ a:not([class]) {
 h1, h2, h3, h4, h5, h6 {
   color:  ${(props) => (props.theme ? _var.mono_000 : _var.mono_010)};
   transition: color 200ms ${_var.cubicBezier};
+  transition-property: color;
 }
 
 svg {

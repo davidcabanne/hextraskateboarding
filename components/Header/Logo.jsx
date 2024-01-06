@@ -17,6 +17,7 @@ export default function Logo({ theme }) {
       y="0px"
       viewBox="0 0 461.6 529.8"
       $theme={theme}
+      aria-label="hextra skateboarding homepage"
     >
       <path
         d="M270.1,301.9c7.9,64.4,36.6,126.7,86,176.1l-51.8,51.8c-31.1-31.1-55.6-66.4-73.5-104

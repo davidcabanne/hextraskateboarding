@@ -92,12 +92,14 @@ export default function VideoPlaceholder({ data }) {
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       />
-      <Iframe
-        ref={playerRef}
-        src={src}
-        title={title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
-      />
+      {isVisible && (
+        <Iframe
+          ref={playerRef}
+          src={src}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen;"
+        />
+      )}
     </Placeholder>
   );
 }

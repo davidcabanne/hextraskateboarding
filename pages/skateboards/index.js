@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from "react";
+import Head from "next/head";
+
 import { MouseContext } from "@/context/mouseContext";
 import * as _var from "@/styles/variables";
 
@@ -13,7 +15,7 @@ import ProductText from "@/components/Section/Product/ProductText";
 import ProductImages from "@/components/Section/Product/ProductImages";
 import ProductImage from "@/components/Section/Product/ProductImage";
 
-import { H1, H2 } from "@/components/typefaces";
+import { H2 } from "@/components/typefaces";
 
 // PICTURES
 import heroSkateboards from "../../public/pictures/skateboards/hextraSkateboarding-skateboardsHero-skateboards.jpg";
@@ -49,63 +51,68 @@ export default function Skateboards({ handleRenderTheme, theme }) {
     cursorChangeHandler("");
   }, []);
   return (
-    <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-      <HeroPage data={hero} />
+    <>
+      <Head>
+        <title>Hextra Skateboarding | Skateboards</title>
+      </Head>
+      <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
+        <HeroPage data={hero} />
 
-      <Section fullScreen img={sectionFullPageGeorgeBriggs} fadeIn />
+        <Section fullScreen img={sectionFullPageGeorgeBriggs} fadeIn />
 
-      <ProductSection alignRight>
-        <ProductImages>
-          <ProductImage img={sectionProductSkateboardsPrimary} index={0} />
-          <ProductImage img={sectionProductSkateboardsSecondary} index={1} />
-        </ProductImages>
-      </ProductSection>
+        <ProductSection alignRight>
+          <ProductImages>
+            <ProductImage img={sectionProductSkateboardsPrimary} index={0} />
+            <ProductImage img={sectionProductSkateboardsSecondary} index={1} />
+          </ProductImages>
+        </ProductSection>
 
-      <Section
-        fullScreen
-        img={sectionFullPageSkateboardsPrimary}
-        fadeIn
-        textColor={`${_var.mono_010}`}
-      >
-        <H2>
-          Taille: 8.25 & 8.5
-          <br />
-          Concave: high & medium
-        </H2>
-      </Section>
-
-      <ProductSection>
-        <ProductImages>
-          <ProductImage img={sectionProductSkateboardsThird} index={0} />
-          <ProductImage img={sectionProductSkateboardsFourth} index={1} />
-        </ProductImages>
-      </ProductSection>
-
-      <ProductSection alignRight>
-        <ProductImages>
-          <ProductImage img={sectionProductSkateboardsFifth} index={0} />
-          <ProductImage img={sectionProductSkateboardsSixth} index={1} />
-        </ProductImages>
-        <ProductText>
+        <Section
+          fullScreen
+          img={sectionFullPageSkateboardsPrimary}
+          fadeIn
+          textColor={`${_var.mono_010}`}
+        >
           <H2>
-            Fabrication artisanale à moins de 200km de Bordeaux.
+            Taille: 8.25 & 8.5
             <br />
-            100% érable canadien &#40;certifié PEFC&#41;.
+            Concave: high & medium
           </H2>
-        </ProductText>
-      </ProductSection>
+        </Section>
 
-      <Section fullScreen img={sectionFullPageSkateboardsSecondary} fadeIn />
+        <ProductSection>
+          <ProductImages>
+            <ProductImage img={sectionProductSkateboardsThird} index={0} />
+            <ProductImage img={sectionProductSkateboardsFourth} index={1} />
+          </ProductImages>
+        </ProductSection>
 
-      <ProductSection>
-        <ProductImages>
-          <ProductImage img={sectionProductGeorgeBriggsPrimary} index={0} />
-          <ProductImage img={sectionProductLaurentRoyerSecondary} index={1} />
-        </ProductImages>
-      </ProductSection>
+        <ProductSection alignRight>
+          <ProductImages>
+            <ProductImage img={sectionProductSkateboardsFifth} index={0} />
+            <ProductImage img={sectionProductSkateboardsSixth} index={1} />
+          </ProductImages>
+          <ProductText>
+            <H2>
+              Fabrication artisanale à moins de 200km de Bordeaux.
+              <br />
+              100% érable canadien &#40;certifié PEFC&#41;.
+            </H2>
+          </ProductText>
+        </ProductSection>
 
-      <Section footer footerFade img={sectionFullPageFooter} reveal />
-      <Footer theme={theme} />
-    </Layout>
+        <Section fullScreen img={sectionFullPageSkateboardsSecondary} fadeIn />
+
+        <ProductSection>
+          <ProductImages>
+            <ProductImage img={sectionProductGeorgeBriggsPrimary} index={0} />
+            <ProductImage img={sectionProductLaurentRoyerSecondary} index={1} />
+          </ProductImages>
+        </ProductSection>
+
+        <Section footer footerFade img={sectionFullPageFooter} reveal />
+        <Footer theme={theme} />
+      </Layout>
+    </>
   );
 }

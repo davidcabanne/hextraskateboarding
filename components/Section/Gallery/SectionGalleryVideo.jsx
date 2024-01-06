@@ -113,7 +113,8 @@ const ExtLink = styled.a`
     }
 
     & h2 {
-      border-bottom: 4px solid ${_var.mono_000};
+      border-bottom: 4px solid
+        ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
     }
 
     & h1 {
@@ -126,7 +127,7 @@ const ExtLink = styled.a`
   }
 `;
 
-export default function SectionGalleryVideo({ data, reveal, fadeIn }) {
+export default function SectionGalleryVideo({ theme, data, reveal, fadeIn }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   // HOOK
@@ -149,6 +150,7 @@ export default function SectionGalleryVideo({ data, reveal, fadeIn }) {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
+            $theme={theme}
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >

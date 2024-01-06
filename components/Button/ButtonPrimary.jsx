@@ -9,7 +9,8 @@ import { H2 } from "@/components/typefaces";
 const Container = styled(Link)`
   color: inherit;
   cursor: none;
-
+  text-decoration-color: ${(props) =>
+    props.$theme ? _var.mono_000 : _var.mono_010};
   & h2 {
     font-style: italic;
   }
@@ -19,16 +20,15 @@ const Container = styled(Link)`
   }
 `;
 
-export default function ButtonPrimary({ link }) {
+export default function ButtonPrimary({ theme, link, ariaLabel }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   return (
-    <Container href={link}>
+    <Container href={link} aria-label={ariaLabel} $theme={theme}>
       <H2
         onMouseEnter={() => cursorChangeHandler("hovered")}
         onMouseLeave={() => cursorChangeHandler("")}
       >
-        {" "}
         En savoir plus
       </H2>
     </Container>

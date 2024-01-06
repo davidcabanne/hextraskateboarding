@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Head from "next/head";
 import { MouseContext } from "@/context/mouseContext";
 
 import Layout from "@/components/Layout";
@@ -77,12 +78,17 @@ export default function Videos({ handleRenderTheme, theme }) {
     cursorChangeHandler("");
   }, []);
   return (
-    <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-      <HeroPage data={hero} />
-      <Section fullScreen img={sectionFullPageAmielCoralia} reveal />
-      <SectionGalleryVideo data={gallery} fadeIn />
-      <Section footer img={sectionFullPageFooter} reveal />
-      <Footer footerLight theme={theme} />
-    </Layout>
+    <>
+      <Head>
+        <title>Hextra Skateboarding | Videos</title>
+      </Head>
+      <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
+        <HeroPage data={hero} />
+        <Section fullScreen img={sectionFullPageAmielCoralia} reveal />
+        <SectionGalleryVideo data={gallery} theme={theme} fadeIn />
+        <Section footer img={sectionFullPageFooter} reveal />
+        <Footer footerLight theme={theme} />
+      </Layout>
+    </>
   );
 }

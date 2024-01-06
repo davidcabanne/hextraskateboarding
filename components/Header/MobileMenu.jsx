@@ -28,6 +28,7 @@ export default function MobileMenu({ theme, menuActive, handleMenu }) {
       onMouseEnter={() => cursorChangeHandler("hovered")}
       onMouseLeave={() => cursorChangeHandler("")}
       onClick={() => handleMenu()}
+      aria-label={menuActive ? "Close Menu" : "Open Menu"}
     >
       <div>{menuActive ? "Close" : "Menu"}</div>
     </Container>

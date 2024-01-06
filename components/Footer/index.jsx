@@ -85,6 +85,7 @@ export default function Footer({ footerLight, theme }) {
       <div>
         <Link
           href="/"
+          aria-label="home"
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")}
         >

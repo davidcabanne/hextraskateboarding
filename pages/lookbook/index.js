@@ -1,4 +1,6 @@
 import React, { useContext, useEffect } from "react";
+import Head from "next/head";
+
 import { MouseContext } from "@/context/mouseContext";
 import * as _var from "@/styles/variables";
 
@@ -59,76 +61,84 @@ export default function Lookbook({ handleRenderTheme, theme }) {
     cursorChangeHandler("");
   }, []);
   return (
-    <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-      <HeroPage data={hero} />
+    <>
+      <Head>
+        <title>Hextra Skateboarding | Lookbook</title>
+      </Head>
+      <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
+        <HeroPage data={hero} />
 
-      <Section fullScreen img={sectionFullPageGeorgeBriggs} reveal />
+        <Section fullScreen img={sectionFullPageGeorgeBriggs} reveal />
 
-      <ProductSection alignRight>
-        <ProductImages>
-          <ProductImage img={sectionProductQuentinDemeesterPrimary} index={0} />
-          <ProductImage
-            img={sectionProductQuentinDemeesterSecondary}
-            index={1}
-          />
-        </ProductImages>
-      </ProductSection>
+        <ProductSection alignRight>
+          <ProductImages>
+            <ProductImage
+              img={sectionProductQuentinDemeesterPrimary}
+              index={0}
+            />
+            <ProductImage
+              img={sectionProductQuentinDemeesterSecondary}
+              index={1}
+            />
+          </ProductImages>
+        </ProductSection>
 
-      <Section
-        fullScreen
-        img={sectionFullPageQuentinDemeester}
-        reveal
-        textColor={`${_var.mono_010}`}
-      >
-        <H2>
-          Confectionné en France.
-          <br />
-          100% coton recyclé.
-        </H2>
-      </Section>
-
-      <ProductSection>
-        <ProductImages>
-          <ProductImage img={sectionProductAmielCoraliaPrimary} index={0} />
-          <ProductImage img={sectionProductAmielCoraliaSecondary} index={1} />
-        </ProductImages>
-      </ProductSection>
-
-      <ProductSection alignRight>
-        <ProductImages>
-          <ProductImage img={sectionProductAmielCoraliaThird} index={0} />
-          <ProductImage img={sectionProductAmielCoraliaFourth} index={1} />
-        </ProductImages>
-        <ProductText>
-          <H1>Hextra Shift</H1>
+        <Section
+          fullScreen
+          img={sectionFullPageQuentinDemeester}
+          reveal
+          textColor={`${_var.mono_010}`}
+        >
           <H2>
-            Pièces de seconde main.
+            Confectionné en France.
             <br />
-            chinées et remises en état de
-            <br />
-            service à Bordeaux.
+            100% coton recyclé.
           </H2>
-        </ProductText>
-      </ProductSection>
+        </Section>
 
-      <SectionGalleryPage img={gallery} />
+        <ProductSection>
+          <ProductImages>
+            <ProductImage img={sectionProductAmielCoraliaPrimary} index={0} />
+            <ProductImage img={sectionProductAmielCoraliaSecondary} index={1} />
+          </ProductImages>
+        </ProductSection>
 
-      <ProductSection>
-        <ProductImages>
-          <ProductImage img={sectionProductScarfPrimary} index={0} />
-          <ProductImage img={sectionProductScarfSecondary} index={1} />
-        </ProductImages>
-        <ProductText>
-          <H1>Hextra Scarf</H1>
-          <H2>
-            Écharpe tricotée à Bordeaux.
-            <br />À partir de laine 100% française.
-          </H2>
-        </ProductText>
-      </ProductSection>
+        <ProductSection alignRight>
+          <ProductImages>
+            <ProductImage img={sectionProductAmielCoraliaThird} index={0} />
+            <ProductImage img={sectionProductAmielCoraliaFourth} index={1} />
+          </ProductImages>
+          <ProductText>
+            <H1>Hextra Shift</H1>
+            <H2>
+              Pièces de seconde main.
+              <br />
+              chinées et remises en état de
+              <br />
+              service à Bordeaux.
+            </H2>
+          </ProductText>
+        </ProductSection>
 
-      <Section footer img={sectionFullPageFooter} reveal />
-      <Footer footerLight theme={theme} />
-    </Layout>
+        <SectionGalleryPage img={gallery} />
+
+        <ProductSection>
+          <ProductImages>
+            <ProductImage img={sectionProductScarfPrimary} index={0} />
+            <ProductImage img={sectionProductScarfSecondary} index={1} />
+          </ProductImages>
+          <ProductText>
+            <H1>Hextra Scarf</H1>
+            <H2>
+              Écharpe tricotée à Bordeaux.
+              <br />À partir de laine 100% française.
+            </H2>
+          </ProductText>
+        </ProductSection>
+
+        <Section footer img={sectionFullPageFooter} reveal />
+        <Footer footerLight theme={theme} />
+      </Layout>
+    </>
   );
 }
