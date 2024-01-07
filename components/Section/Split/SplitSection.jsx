@@ -16,6 +16,11 @@ const Container = styled.section`
 
   ${_var.revealAnimation}
 
+  @supports (-moz-appearance: none) {
+    display: grid;
+    grid-template-columns: 1fr 88px 1fr 88px;
+  }
+
   @media ${_var.device.laptop_max} {
     grid-template-columns: 1fr;
     gap: ${_var.space_M};

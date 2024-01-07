@@ -101,6 +101,20 @@ const ColSecondary = styled.div`
   grid-template-columns: -webkit-min-content 1fr;
   z-index: -1;
 
+  @supports (-moz-appearance: none) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & :nth-child(1) {
+      margin-left: auto;
+    }
+
+    & :nth-child(2) {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
   @media ${customBreakpoint} {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr min-content;
