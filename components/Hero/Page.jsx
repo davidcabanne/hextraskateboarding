@@ -4,6 +4,8 @@ import styled, { css } from "styled-components";
 import * as _var from "@/styles/variables";
 import { H1, H2, H3, H4 } from "../typefaces";
 
+import ExternalLink from "../Common/ExternalLink";
+
 const customBreakpoint = "(max-width: 1280px)";
 
 const Container = styled.section`
@@ -58,7 +60,7 @@ const Title = styled.div`
   margin-bottom: ${_var.space_L};
 
   & h2 {
-    max-width: 24ch;
+    max-width: 22ch;
   }
 
   @media ${_var.device.tablet_max} {
@@ -177,7 +179,13 @@ export default function HeroPage({ data }) {
             <Group>
               <H3>{data.groupTitle}</H3>
               <NamePlaceholder>
-                <H4>{data.groupText}</H4>
+                {data.groupLink ? (
+                  <ExternalLink link={data.groupLink}>
+                    <H4>{data.groupText}</H4>
+                  </ExternalLink>
+                ) : (
+                  <H4>{data.groupText}</H4>
+                )}
               </NamePlaceholder>
             </Group>
             <Group>

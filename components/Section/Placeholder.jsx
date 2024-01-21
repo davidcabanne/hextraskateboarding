@@ -8,6 +8,10 @@ const Container = styled.div`
   height: inherit;
   min-height: inherit;
 
+  & img {
+    object-position: ${(props) => (props.$objectPosition ? "top" : "")};
+  }
+
   ${(props) =>
     props.$footerFade &&
     css`
@@ -37,9 +41,18 @@ const Container = styled.div`
     `}
 `;
 
-export default function Placeholder({ footerFade, flexCenter, children }) {
+export default function Placeholder({
+  footerFade,
+  flexCenter,
+  objectPosition,
+  children,
+}) {
   return (
-    <Container $footerFade={footerFade} $flexCenter={flexCenter}>
+    <Container
+      $footerFade={footerFade}
+      $flexCenter={flexCenter}
+      $objectPosition={objectPosition}
+    >
       {children}
     </Container>
   );

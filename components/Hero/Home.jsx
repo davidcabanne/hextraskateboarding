@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled, { css } from "styled-components";
 import * as _var from "@/styles/variables";
 import { H1, H2, H3, H4 } from "../typefaces";
+import ExternalLink from "../Common/ExternalLink";
 
 const customBreakpoint = "(max-width: 1280px)";
 
@@ -237,7 +238,9 @@ export default function Hero({ imgs }) {
             </Group>
             <Group>
               <H3>Photographe</H3>
-              <H4>Gabriel Renault</H4>
+              <ExternalLink link="https://www.gabrielrenault.com/">
+                <H4>Gabriel Renault</H4>
+              </ExternalLink>
             </Group>
           </Infos>
         </ColPrimary>

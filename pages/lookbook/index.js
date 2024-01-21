@@ -86,6 +86,7 @@ export default function Lookbook({ handleRenderTheme, theme }) {
         <Section
           fullScreen
           img={sectionFullPageQuentinDemeester}
+          objectPosition="top"
           reveal
           textColor={`${_var.mono_010}`}
         >

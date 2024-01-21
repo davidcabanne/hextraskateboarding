@@ -27,6 +27,7 @@ const hero = {
   subtitle: "Filmé et édité au quatre coins de l'Hexagone.",
   groupTitle: "Réalisation",
   groupText: "Robin Claude",
+  groupLink: "https://www.robinclaude.fr/",
   subGroupTitle: "Additional filming",
   subGroupText: "Théo Chapdelaine",
   img: heroEntertainement,

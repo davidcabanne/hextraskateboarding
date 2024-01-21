@@ -109,6 +109,7 @@ export default function Section({
   reveal,
   fadeIn,
   textColor,
+  objectPosition,
 }) {
   // HOOK
   const [containerRef, isVisible] = useElementOnScreen({
@@ -126,7 +127,11 @@ export default function Section({
       $fadeIn={fadeIn}
       className={isVisible ? "active" : ""}
     >
-      <Placeholder footer={footer} footerFade={footerFade}>
+      <Placeholder
+        footer={footer}
+        footerFade={footerFade}
+        objectPosition={objectPosition}
+      >
         <Text $textColor={textColor}>{children}</Text>
         <Image
           src={img}

@@ -24,7 +24,6 @@ import ButtonPrimary from "@/components/Button/ButtonPrimary";
 
 // PICTURES
 import homeHeroGeorgeBriggs from "../public/pictures/home/hextraSkateboarding-homeHero-georgeBriggs-01.jpg";
-// import homeHeroAmielCoralia from "../public/pictures/home/hextraSkateboarding-homeHero-AmielCoralia-002.jpg";
 import homeHeroDavidCabanne from "../public/pictures/home/hextraSkateboarding-homeHero-davidCabanne-03.jpg";
 import homeHeroDavidMétivier from "../public/pictures/home/hextraSkateboarding-homeHero-davidMétivier-04.jpg";
 import homeHeroLaurentRoyer from "../public/pictures/home/hextraSkateboarding-homeHero-laurentRoyer-05.jpg";
@@ -36,11 +35,6 @@ const heroes = [
     img: homeHeroGeorgeBriggs,
     index: 0,
   },
-  // {
-  //   name: "Amiel Coralia",
-  //   img: homeHeroAmielCoralia,
-  //   index: 1,
-  // },
   {
     name: "David Cabanne",
     img: homeHeroDavidCabanne,
@@ -138,7 +132,6 @@ export default function Home({ handleRenderTheme, theme }) {
           <H1>Hextra Skateboards</H1>
           <H2>
             Fabriquées dans un atelier français à moins de 200km de Bordeaux.
-            Composée de 7 plis d'érable canadien, certifié PEFC.
           </H2>
           <ButtonPrimary
             link="/skateboards"
@@ -155,9 +148,9 @@ export default function Home({ handleRenderTheme, theme }) {
         textColor={`${_var.mono_010}`}
       >
         <H2>
-          Rip the streets.
+          Rip the streets,
           <br />
-          Not the planet.
+          not the planet.
         </H2>
       </Section>
 
@@ -165,10 +158,7 @@ export default function Home({ handleRenderTheme, theme }) {
         <VideoPlaceholder data={video_almost_there} />
         <VideoText alignRight>
           <H1>Almost There</H1>
-          <H2>
-            David Métivier en action pour sa première part avec Hextra. Filmé et
-            édité par Robin Claude.
-          </H2>
+          <H2>David Métivier en action pour sa première part avec Hextra.</H2>
         </VideoText>
       </VideoSection>
 

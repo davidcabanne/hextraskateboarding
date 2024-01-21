@@ -57,6 +57,7 @@ opacity: 0.15;
   transform: translateY(32px);
   transition: ${animationCustomTiming} ${cubicBezier};
   transition-property: opacity, transform;
+  transition-delay: 100ms;
 
   @media ${device.tablet_max} {
     transform: translateY(8px);

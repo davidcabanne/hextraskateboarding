@@ -58,7 +58,12 @@ export default function Skateboards({ handleRenderTheme, theme }) {
       <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
         <HeroPage data={hero} />
 
-        <Section fullScreen img={sectionFullPageGeorgeBriggs} fadeIn />
+        <Section
+          fullScreen
+          img={sectionFullPageGeorgeBriggs}
+          objectPosition="top"
+          fadeIn
+        />
 
         <ProductSection alignRight>
           <ProductImages>
