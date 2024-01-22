@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import * as _var from "@/styles/variables";
+import hextraLoader from '../../public/hextraLoader.jpg';
 
 const animationDuration = 700;
 const animationDelay = 2500;
@@ -92,7 +93,7 @@ export default function Loader({ theme }) {
 
   return (
     <Container $theme={theme}>
-      <Video ref={videoRef} preload="true" muted playsInline autoPlay>
+      <Video ref={videoRef} preload="true" muted playsInline autoPlay poster={hextraLoader}>
         <source src="/hextraLoader.mp4" type="video/mp4" />
       </Video>
     </Container>
