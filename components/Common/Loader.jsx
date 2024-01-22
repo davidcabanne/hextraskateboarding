@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import * as _var from "@/styles/variables";
 
-const animationDuration = 500;
-const animationDelay = 6000;
+const animationDuration = 700;
+const animationDelay = 2500;
 const animationLength = animationDuration + animationDelay;
 
 const containerLoad = keyframes`
@@ -24,9 +24,22 @@ opacity: 0;
 const videoLoad = keyframes`
 ${"0%"} {
 opacity: 0;
+transform: scale(0.5);
+}
+${"25%"} {
+transform: scale(1);
+}
+${"50%"} {
+opacity: 1;
+transform: scale(1);
+}
+${"85%"} {
+opacity: 1;
+transform: translateY(0px) scale(1);
 }
 ${"100%"} {
-opacity: 1;
+opacity: 0;
+transform: translateY(16px) scale(0.25);
 }
 `;
 
@@ -48,8 +61,9 @@ const Container = styled.div`
 `;
 
 const Video = styled.video`
-  width: 50%;
-  animation: ${videoLoad} 1000ms ${_var.cubicBezier} forwards;
+  width: 100%;
+  max-width: 50vw;
+  animation: ${videoLoad} ${animationDelay}ms ${_var.cubicBezier} forwards;
 `;
 
 export default function Loader({ theme }) {
@@ -65,7 +79,7 @@ export default function Loader({ theme }) {
   useEffect(() => {
     if (bodyActive) {
       document.body.classList.add("menuActive");
-      videoRef.current.playbackRate = 1.25;
+      videoRef.current.pause();
       videoRef.current.play();
     }
 
@@ -78,7 +92,7 @@ export default function Loader({ theme }) {
 
   return (
     <Container $theme={theme}>
-      <Video ref={videoRef} playsInline muted preload="true">
+      <Video ref={videoRef} preload="true" muted playsInline autoPlay>
         <source src="/hextraLoader.mp4" type="video/mp4" />
       </Video>
     </Container>
