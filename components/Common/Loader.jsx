@@ -6,7 +6,7 @@ const animationDuration = 700;
 const animationDelay = 2500;
 const animationLength = animationDuration + animationDelay;
 
-const videoSrc = "/hextraLoader.mp4";
+const videoSrc = "hextraLoader.mp4";
 
 const containerLoad = keyframes`
 ${"0%"} {
@@ -67,6 +67,7 @@ const Container = styled.div`
 const Video = styled.video`
   position: relative;
   width: 100%;
+  height: auto;
   max-width: 50vw;
   background: rgba(0, 0, 0, 0);
   filter: ${(props) => (props.$theme === true ? "invert(0)" : "invert(1)")};
@@ -111,7 +112,7 @@ export default function Loader({ theme }) {
         autoPlay
         muted
         playsInline
-        preload="true"
+        preload="metadata"
         poster="/hextraLoader.jpg"
       >
         <source src={videoSrc} type="video/mp4" />
