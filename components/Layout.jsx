@@ -13,7 +13,7 @@ const Container = styled.main`
 export default function Layout({ handleRenderTheme, theme, children }) {
   return (
     <>
-      <Loader />
+      <Loader theme={theme} />
       <Container>
         <Header handleRenderTheme={handleRenderTheme} theme={theme} />
         {children}
