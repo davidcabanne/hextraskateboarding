@@ -2,11 +2,16 @@ import React, { useEffect, useState, useRef } from "react";
 import styled, { keyframes } from "styled-components";
 import * as _var from "@/styles/variables";
 
+import useWindowWidth from "@/hooks/useWindowWidth";
+
 const animationDuration = 700;
 const animationDelay = 2500;
 const animationLength = animationDuration + animationDelay;
 
-const videoSrc = "hextraLoader.mp4";
+const videoDesktop = "hextraLoader.mp4";
+const videoLaptop = "hextraLoaderLaptop.mp4";
+const videoTablet = "hextraLoaderTablet.mp4";
+const videoMobile = "hextraLoaderMobile.mp4";
 
 const containerLoad = keyframes`
 ${"0%"} {
@@ -82,6 +87,8 @@ export default function Loader({ theme }) {
   const videoRef = useRef(null);
   const [bodyActive, setBodyActive] = useState(false);
 
+  const innerWidth = useWindowWidth();
+
   useEffect(() => {
     if (document.body !== undefined) {
       setBodyActive(true);
@@ -91,6 +98,19 @@ export default function Loader({ theme }) {
   useEffect(() => {
     if (bodyActive) {
       document.body.classList.add("menuActive");
+      let videoSrc;
+
+      if(innerWidth >= 1024) {
+        videoSrc = videoDesktop;
+      }
+      if(innerWidth < 1024 && innerWidth >= 786) {
+        videoSrc = videoLaptop;
+      }
+      if(innerWidth < 768) {
+        videoSrc = videoTablet;
+      }
+
+
       videoRef.current.src = videoSrc;
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
@@ -115,7 +135,7 @@ export default function Loader({ theme }) {
         preload="metadata"
         poster="/hextraLoader.jpg"
       >
-        <source src={videoSrc} type="video/mp4" />
+        <source src="" type="video/mp4" />
       </Video>
     </Container>
   );
