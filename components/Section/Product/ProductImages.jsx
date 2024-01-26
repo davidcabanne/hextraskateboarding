@@ -12,7 +12,8 @@ const Images = styled.div`
   ${_var.revealAnimation}
 
   @media ${_var.device.tablet_max} {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, minmax(128px, 1fr)); */
+    display: flex;
     gap: ${_var.space_M};
   }
 
