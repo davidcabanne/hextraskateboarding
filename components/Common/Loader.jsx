@@ -59,7 +59,6 @@ const Container = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
-  height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
