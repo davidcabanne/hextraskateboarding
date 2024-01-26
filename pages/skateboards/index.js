@@ -60,6 +60,7 @@ export default function Skateboards({ handleRenderTheme, theme }) {
 
         <Section
           fullScreen
+          extraPadding
           img={sectionFullPageGeorgeBriggs}
           objectPosition="top"
           fadeIn

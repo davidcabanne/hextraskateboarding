@@ -85,7 +85,12 @@ export default function Videos({ handleRenderTheme, theme }) {
       </Head>
       <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
         <HeroPage data={hero} />
-        <Section fullScreen img={sectionFullPageAmielCoralia} reveal />
+        <Section
+          fullScreen
+          extraPadding
+          img={sectionFullPageAmielCoralia}
+          reveal
+        />
         <SectionGalleryVideo data={gallery} theme={theme} fadeIn />
         <Section footer img={sectionFullPageFooter} reveal />
         <Footer footerLight theme={theme} />

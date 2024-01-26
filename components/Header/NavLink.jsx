@@ -1,4 +1,6 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useRouter } from "next/router";
+
 import { MouseContext } from "@/context/mouseContext";
 
 import Link from "next/link";
@@ -47,7 +49,26 @@ export default function NavLink({
   menuActive,
   index,
 }) {
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const router = useRouter();
+
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+
+  const handleClick = (event, link) => {
+    event.preventDefault();
+
+    setIsNavigating(true);
+    document.body.classList.add("page-exit-transition");
+
+    setTimeout(() => {
+      router.push(link);
+    }, 1000);
+  };
+
+  useEffect(() => {
+    document.body.classList.remove("page-exit-transition");
+  }, []);
 
   return (
     <CustomLink
@@ -59,6 +80,7 @@ export default function NavLink({
       $mobileMenuLink={mobileMenuLink}
       $menuActive={menuActive}
       $index={index}
+      onClick={(event) => handleClick(event, link)}
     >
       {children}
     </CustomLink>

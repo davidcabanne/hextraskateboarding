@@ -92,6 +92,7 @@ export default function Home({ handleRenderTheme, theme }) {
 
       <Section
         fullScreen
+        extraPadding
         img={sectionFullPageGeorgeBriggs}
         reveal
         textColor={`${_var.mono_000}`}
@@ -135,7 +136,7 @@ export default function Home({ handleRenderTheme, theme }) {
           </H2>
           <ButtonPrimary
             link="/skateboards"
-            riaLabel="En savoir plus en visitant notre page skateboards"
+            ariaLabel="En savoir plus en visitant notre page skateboards"
             theme={theme}
           />
         </ProductText>

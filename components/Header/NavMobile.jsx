@@ -175,7 +175,7 @@ export default function NavDesktop({
               theme={theme}
               mobileMenuLink
               menuActive={menuActive}
-              index={0}
+              index={1}
             >
               Lookbook
             </NavLink>
@@ -187,7 +187,7 @@ export default function NavDesktop({
               theme={theme}
               mobileMenuLink
               menuActive={menuActive}
-              index={1}
+              index={2}
             >
               Skateboards
             </NavLink>
@@ -199,7 +199,7 @@ export default function NavDesktop({
               theme={theme}
               mobileMenuLink
               menuActive={menuActive}
-              index={2}
+              index={3}
             >
               Videos
             </NavLink>

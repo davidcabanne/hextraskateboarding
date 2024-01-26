@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import * as _var from "../styles/variables";
 
@@ -11,11 +11,20 @@ const Container = styled.main`
 `;
 
 export default function Layout({ handleRenderTheme, theme, children }) {
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const handleActiveNavigation = (state) => {
+    setIsNavigating(state);
+  };
+
   return (
     <>
       <Loader theme={theme} />
       <Container>
-        <Header handleRenderTheme={handleRenderTheme} theme={theme} />
+        <Header
+          handleRenderTheme={handleRenderTheme}
+          theme={theme}
+        />
         {children}
       </Container>
     </>

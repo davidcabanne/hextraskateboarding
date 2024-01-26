@@ -45,10 +45,14 @@ const Container = styled.section`
         min-height: 50vh;
         min-height: 50svh;
         padding: ${_var.space_M} 0px;
+        padding-top: ${(props) =>
+          props.$extraPadding ? `calc(${_var.space_M} * 2)` : ""};
       }
 
       @media ${_var.device.mobileL_max} {
         padding: ${_var.space_S} 0px;
+        padding-top: ${(props) =>
+          props.$extraPadding ? `calc(${_var.space_S} * 2)` : ""};
       }
     `}
 
@@ -96,6 +100,10 @@ const Text = styled.div`
     color: ${(props) => props.$textColor};
     text-align: right;
     background: none;
+
+    @media ${_var.device.tablet_max} {
+      display: none;
+    }
   }
 `;
 
@@ -103,6 +111,7 @@ export default function Section({
   children,
   fullScreen,
   fullPage,
+  extraPadding,
   footer,
   footerFade,
   img,
@@ -122,6 +131,7 @@ export default function Section({
       ref={containerRef}
       $fullScreen={fullScreen}
       $fullPage={fullPage}
+      $extraPadding={extraPadding}
       $footer={footer}
       $reveal={reveal}
       $fadeIn={fadeIn}

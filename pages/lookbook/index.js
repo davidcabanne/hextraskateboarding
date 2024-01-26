@@ -68,7 +68,12 @@ export default function Lookbook({ handleRenderTheme, theme }) {
       <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
         <HeroPage data={hero} />
 
-        <Section fullScreen img={sectionFullPageGeorgeBriggs} reveal />
+        <Section
+          fullScreen
+          extraPadding
+          img={sectionFullPageGeorgeBriggs}
+          reveal
+        />
 
         <ProductSection alignRight>
           <ProductImages>

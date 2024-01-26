@@ -58,7 +58,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   background:  ${(props) => (props.theme ? _var.mono_010 : _var.mono_000)};
-  transition: background 200ms ${_var.cubicBezier};
+  transition: 200ms ${_var.cubicBezier};
+  transition-property: opacity, background;
+  transition-delay: 0ms;
 
   cursor: none;
   @media ${_var.device.tablet_max} {
@@ -71,6 +73,13 @@ body {
     height: 100svh;
     overflow-y: hidden;
   }
+
+  .page-exit-transition {
+    opacity: 0;
+    transition: opacity 500ms ${_var.cubicBezier};
+    transition-delay: 500ms;
+  }
+
 
 html {
   height: -webkit-fill-available;

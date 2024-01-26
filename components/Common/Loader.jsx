@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+
 import Image from "next/image";
 import styled, { keyframes } from "styled-components";
 import * as _var from "@/styles/variables";
@@ -123,7 +124,6 @@ export default function Loader({ theme }) {
   useEffect(() => {
     if (bodyActive) {
       videoRef.current.addEventListener("loadedmetadata", function () {
-        console.log("loaded");
         setIsLoaded(true);
       });
     }
@@ -159,7 +159,13 @@ export default function Loader({ theme }) {
 
   return (
     <Container $theme={theme} className={isLoaded ? "active" : ""}>
-      <Placeholder src={theme === true ? hextraLoaderImg : hextraLoaderImgB} priority={true} fill className={isLoaded ? "inactive" : ""}  />
+      <Placeholder
+        src={theme === true ? hextraLoaderImg : hextraLoaderImgB}
+        priority={true}
+        fill
+        alt="Hextra Skateboarding motion design"
+        className={isLoaded ? "inactive" : ""}
+      />
       <Video
         ref={videoRef}
         $theme={theme}
