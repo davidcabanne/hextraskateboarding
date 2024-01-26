@@ -5,12 +5,14 @@ import useElementOnScreen from "../../../hooks/useElementOnScreen";
 
 const Images = styled.div`
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(256px, 640px));
   gap: ${_var.space_L};
 
   ${_var.revealAnimation}
 
   @media ${_var.device.tablet_max} {
+    grid-template-columns: repeat(2, 1fr);
     gap: ${_var.space_M};
   }
 
