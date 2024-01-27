@@ -99,7 +99,7 @@ export default function Skateboards({ handleRenderTheme, theme }) {
             <ProductImage img={sectionProductSkateboardsSixth} index={1} />
           </ProductImages>
           <ProductText>
-            <H2>
+            <H2 style={{ textWrap: 'balance'}}>
               Fabrication artisanale à moins de 200km de Bordeaux.
               <br />
               100% érable canadien &#40;certifié PEFC&#41;.

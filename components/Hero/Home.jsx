@@ -13,6 +13,7 @@ const Container = styled.section`
   height: 100vh;
   display: flex;
   padding: ${_var.space_L};
+  overflow: hidden;
 
   @media ${_var.device.tablet_max} {
     height: 100vh;
@@ -189,6 +190,9 @@ const SvgH = styled.svg`
 export default function Hero({ imgs }) {
   const placeholderRef = useRef(null);
   const [indexCount, setIndex] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => setOffsetY(window.scrollY);
 
   useEffect(() => {
     const lastIndex = imgs?.length - 1;
@@ -208,11 +212,17 @@ export default function Hero({ imgs }) {
     return () => clearInterval(slider);
   }, [indexCount]);
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <Container>
       <Grid>
         <ColPrimary>
-          <Title>
+          <Title style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
             <H1>Hextra Skateboarding</H1>
             <H2>
               Du skate, des ondes positives et des produits responsables
@@ -220,7 +230,7 @@ export default function Hero({ imgs }) {
             </H2>
           </Title>
           <Infos>
-            <Group>
+            <Group style={{ transform: `translateY(${offsetY * -0.08}px)` }}>
               <H3>Man on board</H3>
               <NamePlaceholder>
                 {imgs.map((item) => {
@@ -236,7 +246,7 @@ export default function Hero({ imgs }) {
                 })}
               </NamePlaceholder>
             </Group>
-            <Group>
+            <Group style={{ transform: `translateY(${offsetY * -0.05}px)` }}>
               <H3>Photographe</H3>
               <ExternalLink link="https://www.gabrielrenault.com/">
                 <H4>Gabriel Renault</H4>
@@ -244,7 +254,7 @@ export default function Hero({ imgs }) {
             </Group>
           </Infos>
         </ColPrimary>
-        <ColSecondary>
+        <ColSecondary style={{ transform: `translateY(${offsetY * 0.15}px)` }}>
           <SvgV
             xmlns="http://www.w3.org/2000/svg"
             x="0px"

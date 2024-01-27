@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import styled, { css } from "styled-components";
 import * as _var from "@/styles/variables";
@@ -14,6 +14,7 @@ const Container = styled.section`
   height: 100vh;
   display: flex;
   padding: ${_var.space_L};
+  overflow: hidden;
 
   @media ${_var.device.tablet_max} {
     height: 100vh;
@@ -119,6 +120,7 @@ const ColSecondary = styled.div`
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-template-columns: -webkit-min-content 1fr;
+  transition: transform 10ms linear;
   z-index: -1;
 
   @supports (-moz-appearance: none) {
@@ -154,7 +156,6 @@ const ColSecondary = styled.div`
 const Placeholder = styled.div`
   position: relative;
   height: 100%;
-  background-color: ${_var.mono_000};
 `;
 
 const SvgV = styled.svg`
@@ -185,16 +186,26 @@ const SvgH = styled.svg`
 `;
 
 export default function HeroPage({ data, logoMobile }) {
+  const [offsetY, setOffsetY] = useState(0);
+
+  const handleScroll = () => setOffsetY(window.scrollY);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Container>
       <Grid>
         <ColPrimary>
-          <Title $logoMobile={logoMobile}>
+          <Title $logoMobile={logoMobile} style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
             <H1>{data.title}</H1>
             <H2>{data.subtitle}</H2>
           </Title>
           <Infos $logoMobile={logoMobile}>
-            <Group>
+            <Group style={{ transform: `translateY(${offsetY * -0.08}px)` }}>
               <H3>{data.groupTitle}</H3>
               <NamePlaceholder>
                 {data.groupLink ? (
@@ -206,13 +217,13 @@ export default function HeroPage({ data, logoMobile }) {
                 )}
               </NamePlaceholder>
             </Group>
-            <Group>
+            <Group style={{ transform: `translateY(${offsetY * -0.05}px)` }}>
               <H3>{data.subGroupTitle}</H3>
               <H4>{data.subGroupText}</H4>
             </Group>
           </Infos>
         </ColPrimary>
-        <ColSecondary>
+        <ColSecondary style={{ transform: `translateY(${offsetY * 0.15}px)` }}>
           <SvgV
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
