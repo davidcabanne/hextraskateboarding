@@ -18,7 +18,7 @@ import ProductImage from "@/components/Section/Product/ProductImage";
 import { H2 } from "@/components/typefaces";
 
 // PICTURES
-import heroSkateboards from "../../public/pictures/skateboards/hextraSkateboarding-skateboardsHero-skateboards.jpg";
+import heroSkateboards from "../../public/pictures/skateboards/hextraSkateboarding-skateboardsHero-skateboards-alt.jpg";
 
 import sectionFullPageGeorgeBriggs from "../../public/pictures/skateboards/hextraSkateboarding-skateboardsFullPage-georgeBriggs.jpg";
 import sectionFullPageSkateboardsPrimary from "../../public/pictures/skateboards/hextraSkateboarding-skateboardsFullPage-skateboards-01.jpg";
@@ -55,8 +55,8 @@ export default function Skateboards({ handleRenderTheme, theme }) {
       <Head>
         <title>Hextra Skateboarding | Skateboards</title>
       </Head>
-      <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-        <HeroPage data={hero} />
+      <Layout handleRenderTheme={handleRenderTheme} theme={theme} logoMobile>
+        <HeroPage data={hero} logoMobile />
 
         <Section
           fullScreen

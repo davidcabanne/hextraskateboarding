@@ -87,14 +87,6 @@ const NavLinks = styled.ul`
   align-items: flex-start;
   gap: ${_var.space_M};
   list-style: none;
-
-  /* & a {
-    cursor: none;
-
-    @media ${_var.device.tablet_max} {
-      cursor: pointer;
-    }
-  } */
 `;
 
 const Svg = styled.svg`
@@ -116,6 +108,7 @@ const Svg = styled.svg`
 export default function NavDesktop({
   handleRenderTheme,
   theme,
+  logoMobile,
   menuActive,
   handleMenu,
 }) {
@@ -131,7 +124,7 @@ export default function NavDesktop({
           theme={theme}
           aria-label="Hextra Skateboarding Homepage"
         >
-          <Logo theme={theme} />
+          <Logo theme={theme} logoMobile={logoMobile} />
         </NavLink>
         <CallToActions $theme={theme} className={menuActive ? "active" : ""}>
           <Svg

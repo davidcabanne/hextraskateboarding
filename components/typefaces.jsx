@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import * as _var from "@/styles/variables";
 
 export const H1 = styled.h1`

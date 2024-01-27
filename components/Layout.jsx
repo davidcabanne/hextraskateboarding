@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import * as _var from "../styles/variables";
 
@@ -10,13 +10,12 @@ const Container = styled.main`
   width: 100%;
 `;
 
-export default function Layout({ handleRenderTheme, theme, children }) {
-  const [isNavigating, setIsNavigating] = useState(false);
-
-  const handleActiveNavigation = (state) => {
-    setIsNavigating(state);
-  };
-
+export default function Layout({
+  handleRenderTheme,
+  theme,
+  logoMobile,
+  children,
+}) {
   return (
     <>
       <Loader theme={theme} />
@@ -24,6 +23,7 @@ export default function Layout({ handleRenderTheme, theme, children }) {
         <Header
           handleRenderTheme={handleRenderTheme}
           theme={theme}
+          logoMobile={logoMobile}
         />
         {children}
       </Container>

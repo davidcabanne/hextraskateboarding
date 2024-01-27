@@ -59,7 +59,7 @@ const Container = styled.header`
   }
 `;
 
-export default function Header({ handleRenderTheme, theme }) {
+export default function Header({ handleRenderTheme, theme, logoMobile }) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
 
@@ -103,6 +103,7 @@ export default function Header({ handleRenderTheme, theme }) {
         menuActive={menuActive}
         handleMenu={handleMenu}
         handleRenderTheme={handleRenderTheme}
+        logoMobile={logoMobile}
       />
     </Container>
   );

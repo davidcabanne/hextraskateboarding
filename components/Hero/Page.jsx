@@ -68,6 +68,15 @@ const Title = styled.div`
     h2 {
       color: ${_var.mono_010};
     }
+
+    ${(props) =>
+      props.$logoMobile &&
+      css`
+        & h1,
+        h2 {
+          color: ${_var.mono_000};
+        }
+      `}
   }
 `;
 
@@ -81,6 +90,15 @@ const Infos = styled.div`
     h4 {
       color: ${_var.mono_010};
     }
+
+    ${(props) =>
+      props.$logoMobile &&
+      css`
+        & h3,
+        h4 {
+          color: ${_var.mono_000};
+        }
+      `}
   }
 `;
 
@@ -166,16 +184,16 @@ const SvgH = styled.svg`
   }
 `;
 
-export default function HeroPage({ data }) {
+export default function HeroPage({ data, logoMobile }) {
   return (
     <Container>
       <Grid>
         <ColPrimary>
-          <Title>
+          <Title $logoMobile={logoMobile}>
             <H1>{data.title}</H1>
             <H2>{data.subtitle}</H2>
           </Title>
-          <Infos>
+          <Infos $logoMobile={logoMobile}>
             <Group>
               <H3>{data.groupTitle}</H3>
               <NamePlaceholder>

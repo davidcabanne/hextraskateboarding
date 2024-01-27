@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { MouseContext } from "@/context/mouseContext";
 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import * as _var from "@/styles/variables";
 import NavLink from "../Header/NavLink";
 import { H2 } from "@/components/typefaces";
@@ -22,13 +22,17 @@ export default function ButtonPrimary({ theme, link, ariaLabel }) {
 
   return (
     <Container link={link} aria-label={ariaLabel} $theme={theme}>
-        <H2
-          style={{ fontStyle: "italic", textTransform: 'none', textDecoration: "underline" }}
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
-        >
-          En savoir plus
-        </H2>
+      <H2
+        style={{
+          fontStyle: "italic",
+          textTransform: "none",
+          textDecoration: "underline",
+        }}
+        onMouseEnter={() => cursorChangeHandler("hovered")}
+        onMouseLeave={() => cursorChangeHandler("")}
+      >
+        En savoir plus
+      </H2>
     </Container>
   );
 }

@@ -32,10 +32,10 @@ const Slider = styled.div`
   position: relative;
   width: 100%;
   overflow-x: hidden;
-  padding-top: ${_var.space_XXL};
+  padding: ${_var.space_XXL} 0px;
 
   @media ${_var.device.tablet_max} {
-    padding-top: ${_var.space_XL};
+    padding: ${_var.space_XL} 0px;
   }
 
   & div {
@@ -62,7 +62,7 @@ const Contact = styled.div`
   display: grid;
   grid-template-columns: 304px 1fr 304px;
   color: ${_var.mono_010};
-  padding: ${_var.space_L};
+  padding: 0px ${_var.space_L} ${_var.space_L} ${_var.space_L};
 
   ${(props) =>
     props.$footerLight &&
@@ -74,7 +74,7 @@ const Contact = styled.div`
 
   @media ${_var.device.tablet_max} {
     grid-template-columns: 1fr;
-    padding-bottom: ${_var.space_L};
+    padding-bottom: 0px ${_var.space_L} ${_var.space_L} ${_var.space_L};
   }
 
   & span:nth-child(1) {
@@ -246,7 +246,7 @@ export default function Footer({ footerLight, theme }) {
               <g>
                 <polygon points="869.73,3.04 876.02,3.04 876.02,21.43 879.26,21.43 879.26,3.04 885.5,3.04 885.5,0 869.73,0 		" />
                 <polygon
-                  points="903.21,0 897.78,16.2 892.35,0 887.39,0 887.39,21.43 890.66,21.43 890.66,4.71 896.15,20.69 899.41,20.69 
+                  points="903.21,0 897.78,16.2 892.35,0 887.39,0 887.39,21.43 890.66,21.43 890.66,4.71 896.15,20.69 899.41,20.69
 			904.9,4.71 904.9,21.43 908.17,21.43 908.17,0 		"
                 />
               </g>
@@ -374,7 +374,7 @@ export default function Footer({ footerLight, theme }) {
               <g>
                 <polygon points="869.73,3.04 876.02,3.04 876.02,21.43 879.26,21.43 879.26,3.04 885.5,3.04 885.5,0 869.73,0 		" />
                 <polygon
-                  points="903.21,0 897.78,16.2 892.35,0 887.39,0 887.39,21.43 890.66,21.43 890.66,4.71 896.15,20.69 899.41,20.69 
+                  points="903.21,0 897.78,16.2 892.35,0 887.39,0 887.39,21.43 890.66,21.43 890.66,4.71 896.15,20.69 899.41,20.69
 			904.9,4.71 904.9,21.43 908.17,21.43 908.17,0 		"
                 />
               </g>
