@@ -13,7 +13,8 @@ const Container = styled.main`
 export default function Layout({
   handleRenderTheme,
   theme,
-  logoMobile,
+  heroLogo,
+  skateboardsPage,
   children,
 }) {
   return (
@@ -23,7 +24,8 @@ export default function Layout({
         <Header
           handleRenderTheme={handleRenderTheme}
           theme={theme}
-          logoMobile={logoMobile}
+          heroLogo={heroLogo}
+          skateboardsPage={skateboardsPage}
         />
         {children}
       </Container>

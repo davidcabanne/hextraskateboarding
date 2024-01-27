@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Head from "next/head";
 import { MouseContext } from "@/context/mouseContext";
+import useElementOnScreen from "@/hooks/useElementOnScreen";
 
 import Layout from "@/components/Layout";
 import Section from "@/components/Section/Section";
@@ -73,27 +74,52 @@ const gallery = [
 ];
 
 export default function Videos({ handleRenderTheme, theme }) {
+  const [heroLogo, setHeroLogo] = useState();
+
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     cursorChangeHandler("");
   }, []);
+
+  // HOOK
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "-40px 0px 0px 0px",
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setHeroLogo(isVisible);
+  }, [isVisible]);
   return (
     <>
       <Head>
         <title>Hextra Skateboarding | Videos</title>
       </Head>
-      <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-        <HeroPage data={hero} />
+      <Layout
+        handleRenderTheme={handleRenderTheme}
+        theme={theme}
+        heroLogo={heroLogo}
+      >
+
+        <div ref={containerRef}>
+          <HeroPage data={hero} />
+        </div>
+
         <Section
           fullScreen
           extraPadding
           img={sectionFullPageAmielCoralia}
           reveal
         />
+
         <SectionGalleryVideo data={gallery} theme={theme} fadeIn />
+
         <Section footer img={sectionFullPageFooter} reveal />
+
         <Footer footerLight theme={theme} />
+
       </Layout>
     </>
   );

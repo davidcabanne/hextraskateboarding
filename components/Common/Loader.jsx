@@ -160,8 +160,8 @@ export default function Loader({ theme }) {
     <Container $theme={theme} className={isLoaded ? "active" : ""}>
       <Placeholder
         src={theme === true ? hextraLoaderImg : hextraLoaderImgB}
-        priority={true}
         fill
+        sizes="100%"
         alt="Hextra Skateboarding motion design"
         className={isLoaded ? "inactive" : ""}
       />

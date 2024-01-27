@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MouseContext } from "@/context/mouseContext";
+import useElementOnScreen from "@/hooks/useElementOnScreen";
 
 import * as _var from "@/styles/variables";
 
@@ -80,15 +81,31 @@ import sectionSplitMtvPrimary from "../public/pictures/home/hextraSkateboarding-
 import sectionSplitMtvSecondary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-02.jpg";
 
 export default function Home({ handleRenderTheme, theme }) {
+  const [heroLogo, setHeroLogo] = useState();
+
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     cursorChangeHandler("");
   }, []);
 
+  // HOOK
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "-40px 0px 0px 0px",
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setHeroLogo(isVisible);
+  }, [isVisible]);
+
   return (
-    <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-      <Hero imgs={heroes} />
+    <Layout handleRenderTheme={handleRenderTheme} theme={theme} heroLogo={heroLogo}>
+
+      <div ref={containerRef}>
+        <Hero imgs={heroes} />
+      </div>
 
       <Section
         fullScreen
@@ -167,7 +184,7 @@ export default function Home({ handleRenderTheme, theme }) {
 
       <Section footer footerFade img={sectionFullPageFooter} reveal />
 
-      <Footer logoFooter />
+      <Footer />
     </Layout>
   );
 }

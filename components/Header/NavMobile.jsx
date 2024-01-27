@@ -108,9 +108,10 @@ const Svg = styled.svg`
 export default function NavDesktop({
   handleRenderTheme,
   theme,
-  logoMobile,
   menuActive,
   handleMenu,
+  heroLogo,
+  skateboardsPage
 }) {
   const pathname = usePathname();
 
@@ -124,7 +125,7 @@ export default function NavDesktop({
           theme={theme}
           aria-label="Hextra Skateboarding Homepage"
         >
-          <Logo theme={theme} logoMobile={logoMobile} />
+          <Logo theme={theme} heroLogo={heroLogo} skateboardsPage={skateboardsPage} menuActive={menuActive} />
         </NavLink>
         <CallToActions $theme={theme} className={menuActive ? "active" : ""}>
           <Svg

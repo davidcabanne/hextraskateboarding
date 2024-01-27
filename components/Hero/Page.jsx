@@ -69,15 +69,6 @@ const Title = styled.div`
     h2 {
       color: ${_var.mono_010};
     }
-
-    ${(props) =>
-      props.$logoMobile &&
-      css`
-        & h1,
-        h2 {
-          color: ${_var.mono_000};
-        }
-      `}
   }
 `;
 
@@ -91,15 +82,6 @@ const Infos = styled.div`
     h4 {
       color: ${_var.mono_010};
     }
-
-    ${(props) =>
-      props.$logoMobile &&
-      css`
-        & h3,
-        h4 {
-          color: ${_var.mono_000};
-        }
-      `}
   }
 `;
 
@@ -185,7 +167,7 @@ const SvgH = styled.svg`
   }
 `;
 
-export default function HeroPage({ data, logoMobile }) {
+export default function HeroPage({ data }) {
   const [offsetY, setOffsetY] = useState(0);
 
   const handleScroll = () => setOffsetY(window.scrollY);
@@ -200,11 +182,11 @@ export default function HeroPage({ data, logoMobile }) {
     <Container>
       <Grid>
         <ColPrimary>
-          <Title $logoMobile={logoMobile} style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
+          <Title style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
             <H1>{data.title}</H1>
             <H2>{data.subtitle}</H2>
           </Title>
-          <Infos $logoMobile={logoMobile}>
+          <Infos >
             <Group style={{ transform: `translateY(${offsetY * -0.08}px)` }}>
               <H3>{data.groupTitle}</H3>
               <NamePlaceholder>

@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Head from "next/head";
+import useElementOnScreen from "@/hooks/useElementOnScreen";
 
 import { MouseContext } from "@/context/mouseContext";
 import * as _var from "@/styles/variables";
@@ -55,18 +56,35 @@ const gallery = {
 };
 
 export default function Lookbook({ handleRenderTheme, theme }) {
+  const [heroLogo, setHeroLogo] = useState();
+
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     cursorChangeHandler("");
   }, []);
+
+  // HOOK
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "-40px 0px 0px 0px",
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    setHeroLogo(isVisible);
+  }, [isVisible]);
+
   return (
     <>
       <Head>
         <title>Hextra Skateboarding | Lookbook</title>
       </Head>
-      <Layout handleRenderTheme={handleRenderTheme} theme={theme}>
-        <HeroPage data={hero} />
+      <Layout handleRenderTheme={handleRenderTheme} theme={theme} heroLogo={heroLogo}>
+
+        <div ref={containerRef}>
+          <HeroPage data={hero} />
+        </div>
 
         <Section
           fullScreen

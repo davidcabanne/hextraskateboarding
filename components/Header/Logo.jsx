@@ -9,22 +9,22 @@ const Svg = styled.svg`
   transition: fill 200ms ${_var.cubicBezier};
 
   @media ${_var.device.tablet_max} {
-    fill: ${(props) => (props.$theme ? _var.mono_010 : _var.mono_000)};
+    fill: ${(props) => (props.$heroLogo ? _var.mono_010 : "")};
 
     ${(props) =>
-      props.$logoMobile &&
+      props.$skateboardsPage &&
       css`
-        fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+        fill: ${(props) => (props.$heroLogo ? _var.mono_010 : _var.mono_000)};
       `}
     ${(props) =>
-      props.$logoFooter &&
+      props.$menuActive &&
       css`
         fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
       `}
   }
 `;
 
-export default function Logo({ theme, logoMobile, logoFooter }) {
+export default function Logo({ theme, heroLogo, skateboardsPage, menuActive }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -32,8 +32,9 @@ export default function Logo({ theme, logoMobile, logoFooter }) {
       y="0px"
       viewBox="0 0 461.6 529.8"
       $theme={theme}
-      $logoMobile={logoMobile}
-      $logoFooter={logoFooter}
+      $heroLogo={heroLogo}
+      $skateboardsPage={skateboardsPage}
+      $menuActive={menuActive}
       aria-label="hextra skateboarding homepage"
     >
       <path

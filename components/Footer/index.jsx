@@ -117,7 +117,7 @@ const Contact = styled.div`
   }
 `;
 
-export default function Footer({ footerLight, theme, logoFooter }) {
+export default function Footer({ footerLight, theme }) {
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   return (
@@ -400,7 +400,7 @@ export default function Footer({ footerLight, theme, logoFooter }) {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <Logo logoFooter={logoFooter} />
+            <Logo />
           </Link>
         </div>
         <span>

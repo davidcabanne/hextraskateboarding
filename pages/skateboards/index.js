@@ -1,5 +1,6 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Head from "next/head";
+import useElementOnScreen from "@/hooks/useElementOnScreen";
 
 import { MouseContext } from "@/context/mouseContext";
 import * as _var from "@/styles/variables";
@@ -45,18 +46,53 @@ const hero = {
 };
 
 export default function Skateboards({ handleRenderTheme, theme }) {
+  const [heroLogo, setHeroLogo] = useState();
+
   const { cursorType, cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     cursorChangeHandler("");
   }, []);
+
+  // HOOK
+  const [containerRef, isVisible] = useElementOnScreen({
+    root: null,
+    rootMargin: "-40px 0px 0px 0px",
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    // theme === light
+    if (theme && isVisible) {
+      setHeroLogo(false);
+    }
+    if (theme && !isVisible) {
+      setHeroLogo(false);
+    }
+
+    // !theme === dark
+    if (theme === false && isVisible) {
+      setHeroLogo(false);
+    }
+    if (theme === false && !isVisible) {
+      setHeroLogo(true);
+    }
+  }, [theme, isVisible]);
+
   return (
     <>
       <Head>
         <title>Hextra Skateboarding | Skateboards</title>
       </Head>
-      <Layout handleRenderTheme={handleRenderTheme} theme={theme} logoMobile>
-        <HeroPage data={hero} logoMobile />
+      <Layout
+        handleRenderTheme={handleRenderTheme}
+        theme={theme}
+        heroLogo={heroLogo}
+        skateboardsPage
+      >
+        <div ref={containerRef}>
+          <HeroPage data={hero} />
+        </div>
 
         <Section
           fullScreen
@@ -99,7 +135,7 @@ export default function Skateboards({ handleRenderTheme, theme }) {
             <ProductImage img={sectionProductSkateboardsSixth} index={1} />
           </ProductImages>
           <ProductText>
-            <H2 style={{ textWrap: 'balance'}}>
+            <H2 style={{ textWrap: "balance" }}>
               Fabrication artisanale à moins de 200km de Bordeaux.
               <br />
               100% érable canadien &#40;certifié PEFC&#41;.
@@ -117,7 +153,7 @@ export default function Skateboards({ handleRenderTheme, theme }) {
         </ProductSection>
 
         <Section footer footerFade img={sectionFullPageFooter} reveal />
-        <Footer theme={theme} logoFooter/>
+        <Footer theme={theme} />
       </Layout>
     </>
   );

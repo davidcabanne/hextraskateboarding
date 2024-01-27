@@ -59,7 +59,12 @@ const Container = styled.header`
   }
 `;
 
-export default function Header({ handleRenderTheme, theme, logoMobile }) {
+export default function Header({
+  handleRenderTheme,
+  theme,
+  heroLogo,
+  skateboardsPage,
+}) {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
 
@@ -103,7 +108,8 @@ export default function Header({ handleRenderTheme, theme, logoMobile }) {
         menuActive={menuActive}
         handleMenu={handleMenu}
         handleRenderTheme={handleRenderTheme}
-        logoMobile={logoMobile}
+        heroLogo={heroLogo}
+        skateboardsPage={skateboardsPage}
       />
     </Container>
   );
