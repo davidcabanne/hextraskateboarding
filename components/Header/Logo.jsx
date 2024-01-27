@@ -14,7 +14,7 @@ const Svg = styled.svg`
     ${(props) =>
       props.$logoMobile &&
       css`
-        fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_001)};
+        fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
       `}
   }
 `;
