@@ -69,6 +69,15 @@ const Title = styled.div`
     h2 {
       color: ${_var.mono_010};
     }
+
+    ${(props) =>
+      props.$textDark &&
+      css`
+        & h1,
+        h2 {
+          color: ${_var.mono_000};
+        }
+      `}
   }
 `;
 
@@ -82,6 +91,15 @@ const Infos = styled.div`
     h4 {
       color: ${_var.mono_010};
     }
+
+    ${(props) =>
+      props.$textDark &&
+      css`
+        & h3,
+        h4 {
+          color: ${_var.mono_000};
+        }
+      `}
   }
 `;
 
@@ -167,27 +185,33 @@ const SvgH = styled.svg`
   }
 `;
 
-export default function HeroPage({ data }) {
+export default function HeroPage({ data, textDark }) {
   const [offsetY, setOffsetY] = useState(0);
 
   const handleScroll = () => setOffsetY(window.scrollY);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <Container>
       <Grid>
         <ColPrimary>
-          <Title style={{ transform: `translateY(${offsetY * -0.1}px)` }}>
+          <Title
+            style={{ transform: `translateY(${offsetY * -0.1}px)` }}
+            $textDark={textDark}
+          >
             <H1>{data.title}</H1>
             <H2>{data.subtitle}</H2>
           </Title>
-          <Infos >
-            <Group style={{ transform: `translateY(${offsetY * -0.08}px)` }}>
+          <Infos  $textDark={textDark}>
+            <Group
+              style={{ transform: `translateY(${offsetY * -0.08}px)` }}
+             
+            >
               <H3>{data.groupTitle}</H3>
               <NamePlaceholder>
                 {data.groupLink ? (
@@ -199,7 +223,9 @@ export default function HeroPage({ data }) {
                 )}
               </NamePlaceholder>
             </Group>
-            <Group style={{ transform: `translateY(${offsetY * -0.05}px)` }}>
+            <Group
+              style={{ transform: `translateY(${offsetY * -0.05}px)` }}
+            >
               <H3>{data.subGroupTitle}</H3>
               <H4>{data.subGroupText}</H4>
             </Group>

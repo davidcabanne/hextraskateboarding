@@ -91,7 +91,7 @@ export default function Skateboards({ handleRenderTheme, theme }) {
         skateboardsPage
       >
         <div ref={containerRef}>
-          <HeroPage data={hero} />
+          <HeroPage data={hero} textDark />
         </div>
 
         <Section
