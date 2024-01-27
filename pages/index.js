@@ -78,7 +78,7 @@ const video_almost_there = {
 };
 
 import sectionSplitMtvPrimary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-01.jpg";
-import sectionSplitMtvSecondary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-02.jpg";
+import sectionSplitMtvSecondary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-02-alt.jpg";
 
 export default function Home({ handleRenderTheme, theme }) {
   const [heroLogo, setHeroLogo] = useState();

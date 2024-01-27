@@ -25,7 +25,7 @@ import videoGalleryNextDoor from "../../public/pictures/videos/hextraSkateboardi
 
 const hero = {
   title: "Hextra Vidéos",
-  subtitle: "Filmé et édité au quatre coins de l'Hexagone.",
+  subtitle: "Filmé et édité aux quatre coins de l'Hexagone.",
   groupTitle: "Réalisation",
   groupText: "Robin Claude",
   groupLink: "https://www.robinclaude.fr/",
