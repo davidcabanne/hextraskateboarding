@@ -117,7 +117,7 @@ export default function Skateboards({ handleRenderTheme, theme }) {
         </ProductSection>
 
         <Section footer footerFade img={sectionFullPageFooter} reveal />
-        <Footer theme={theme} />
+        <Footer theme={theme} logoFooter/>
       </Layout>
     </>
   );

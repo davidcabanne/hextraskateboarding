@@ -167,7 +167,7 @@ export default function Home({ handleRenderTheme, theme }) {
 
       <Section footer footerFade img={sectionFullPageFooter} reveal />
 
-      <Footer />
+      <Footer logoFooter />
     </Layout>
   );
 }

@@ -16,10 +16,15 @@ const Svg = styled.svg`
       css`
         fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
       `}
+    ${(props) =>
+      props.$logoFooter &&
+      css`
+        fill: ${(props) => (props.$theme ? _var.mono_000 : _var.mono_010)};
+      `}
   }
 `;
 
-export default function Logo({ theme, logoMobile }) {
+export default function Logo({ theme, logoMobile, logoFooter }) {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +33,7 @@ export default function Logo({ theme, logoMobile }) {
       viewBox="0 0 461.6 529.8"
       $theme={theme}
       $logoMobile={logoMobile}
+      $logoFooter={logoFooter}
       aria-label="hextra skateboarding homepage"
     >
       <path
