@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { MouseContext } from "../../context/mouseContext";
 
-import Link from "next/link";
+import NavLink from "../Header/NavLink";
 import styled, { css, keyframes } from "styled-components";
 import * as _var from "../../styles/variables";
 
@@ -394,14 +394,14 @@ export default function Footer({ footerLight, theme }) {
           </H5>
         </span>
         <div>
-          <Link
-            href="/"
+          <NavLink
+            link="/"
             aria-label="home"
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
             <Logo />
-          </Link>
+          </NavLink>
         </div>
         <span>
           <H5

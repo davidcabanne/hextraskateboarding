@@ -159,6 +159,17 @@ function MyApp({ Component, pageProps }) {
         <Head>
           <title>Hextra Skateboarding</title>
           <meta name="description" content={seo.content} />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="white"
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="black"
+          />
+          <meta name="theme-color" content="#white" />
 
           <link rel="icon" href="/favicon.ico"></link>
           <link

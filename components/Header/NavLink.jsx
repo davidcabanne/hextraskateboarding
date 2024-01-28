@@ -58,12 +58,16 @@ export default function NavLink({
   const handleClick = (event, link) => {
     event.preventDefault();
 
-    setIsNavigating(true);
-    document.body.classList.add("page-exit-transition");
+    if (link === "/" && router.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setIsNavigating(true);
+      document.body.classList.add("page-exit-transition");
 
-    setTimeout(() => {
-      router.push(link);
-    }, 1000);
+      setTimeout(() => {
+        router.push(link);
+      }, 1000);
+    }
   };
 
   useEffect(() => {

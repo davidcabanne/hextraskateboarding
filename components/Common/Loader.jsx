@@ -6,8 +6,8 @@ import * as _var from "@/styles/variables";
 
 import useWindowWidth from "@/hooks/useWindowWidth";
 
-import hextraLoaderImg from "../../public/hextraLoader.jpg";
-import hextraLoaderImgB from "../../public/hextraLoaderB.jpg";
+import hextraLoaderImg from "../../public/hextraLoader.webp";
+import hextraLoaderImgB from "../../public/hextraLoaderB.webp";
 
 const animationDuration = 700;
 const animationDelay = 2500;
@@ -172,7 +172,6 @@ export default function Loader({ theme }) {
         muted
         playsInline
         preload="metadata"
-        poster="/hextraLoader.jpg"
         className={isLoaded ? "active" : ""}
       >
         <source src="" type="video/mp4" />

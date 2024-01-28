@@ -24,6 +24,8 @@ export default function ProductImages({ img }) {
         placeholder="blur"
         style={{ objectFit: "cover" }}
         alt="Picture of the author"
+        fill
+        sizes="100%"
       />
     </Placeholder>
   );
