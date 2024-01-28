@@ -12,7 +12,6 @@ const Placeholder = styled.div`
   & img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
   }
 `;
 
@@ -22,7 +21,6 @@ export default function ProductImages({ img }) {
       <Image
         src={img}
         placeholder="blur"
-        style={{ objectFit: "cover" }}
         alt="Picture of the author"
         fill
         sizes="100%"
