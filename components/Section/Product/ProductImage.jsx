@@ -13,18 +13,16 @@ const Placeholder = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media ${_var.device.tablet_max} {
+    max-width: 100%;
+  }
 `;
 
 export default function ProductImages({ img }) {
   return (
     <Placeholder>
-      <Image
-        src={img}
-        placeholder="blur"
-        alt="Picture of the author"
-        fill
-        sizes="100%"
-      />
+      <Image src={img} fill placeholder="blur" alt="Picture of the author" />
     </Placeholder>
   );
 }
