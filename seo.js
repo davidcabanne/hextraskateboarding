@@ -3,4 +3,4 @@ export const headDescription =
   "Du skate, des ondes positives et des produits responsables fabriqués localement, en France.";
 
 export const OpengraphImg = "HextraSkateboarding-Opengraph.jpg";
-export const TwitterCardImg = "HextraSkateboarding-TiwtterCard.jpg";
+export const TwitterCardImg = "HextraSkateboarding-TwitterCard.jpg";

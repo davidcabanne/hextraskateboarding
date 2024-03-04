@@ -204,7 +204,7 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:image:secure_url" content={seo.OpengraphImg} />
           <meta
             property="og:image"
-            content="https://opengraph.b-cdn.net/production/documents/97ac76cd-8f71-4502-b0d0-0b54594af7e6.jpg?token=mtv1zZL2_3XTkxO2Z4OOO0ghRpvJUJgmB9wvZ2TcuMA&height=801&width=1200&expires=33245571551"
+            content={`${process.env.NEXT_PUBLIC_BASE_URL}/pictures/socials/${seo.OpengraphImg}`}
           />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="384" />
@@ -217,7 +217,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:description" content={seo.headDescription} />
           <meta
             name="twitter:image"
-            content="https://opengraph.b-cdn.net/production/documents/97ac76cd-8f71-4502-b0d0-0b54594af7e6.jpg?token=mtv1zZL2_3XTkxO2Z4OOO0ghRpvJUJgmB9wvZ2TcuMA&height=801&width=1200&expires=33245571551"
+            content={`${process.env.NEXT_PUBLIC_BASE_URL}/pictures/socials/${seo.TwitterCardImg}`}
           />
         </Head>
         <div className={titilum.className}>
