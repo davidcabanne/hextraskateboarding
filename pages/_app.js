@@ -198,17 +198,14 @@ function MyApp({ Component, pageProps }) {
             property="og:url"
             content="https://www.hextraskateboarding.com"
           />
-          <meta
-            property="og:site_name"
-            content="douce catering | traiteur et design culinaire"
-          />
+          <meta property="og:site_name" content={seo.content} />
           <meta property="og:type" content="website" />
           <meta property="og:description" content={seo.headDescription} />
           <meta
             property="og:image:secure_url"
-            content={seo.headImage_secure_url}
+            content={seo.OpengraphImg}
           />
-          <meta property="og:image" content={seo.headImage} />
+          <meta property="og:image" content={seo.OpengraphImg} />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="384" />
           <meta property="og:image:height" content="216" />
@@ -218,7 +215,7 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:site" content="@HextraSkateboarding" />
           <meta name="twitter:title" content="Hextra Skateboarding" />
           <meta name="twitter:description" content={seo.headDescription} />
-          <meta name="twitter:image" content={seo.headImage_secure_url} />
+          <meta name="twitter:image" content={seo.TwitterCardImg} />
         </Head>
         <div className={titilum.className}>
           <Cursor />
