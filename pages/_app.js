@@ -201,11 +201,11 @@ function MyApp({ Component, pageProps }) {
           <meta property="og:site_name" content={seo.content} />
           <meta property="og:type" content="website" />
           <meta property="og:description" content={seo.headDescription} />
+          <meta property="og:image:secure_url" content={seo.OpengraphImg} />
           <meta
-            property="og:image:secure_url"
-            content={seo.OpengraphImg}
+            property="og:image"
+            content={`${process.env.NEXT_PUBLIC_BASE_URL}/socials/${seo.OpengraphImg}`}
           />
-          <meta property="og:image" content={seo.OpengraphImg} />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="384" />
           <meta property="og:image:height" content="216" />
@@ -215,7 +215,10 @@ function MyApp({ Component, pageProps }) {
           <meta name="twitter:site" content="@HextraSkateboarding" />
           <meta name="twitter:title" content="Hextra Skateboarding" />
           <meta name="twitter:description" content={seo.headDescription} />
-          <meta name="twitter:image" content={seo.TwitterCardImg} />
+          <meta
+            name="twitter:image"
+            content={`${process.env.NEXT_PUBLIC_BASE_URL}/socials/${seo.TwitterCardImg}`}
+          />
         </Head>
         <div className={titilum.className}>
           <Cursor />
