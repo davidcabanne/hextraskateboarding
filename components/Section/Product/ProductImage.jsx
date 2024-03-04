@@ -19,10 +19,15 @@ const Placeholder = styled.div`
   }
 `;
 
-export default function ProductImages({ img }) {
+export default function ProductImages({ img, alt }) {
   return (
     <Placeholder>
-      <Image src={img} fill placeholder="blur" alt="Picture of the author" />
+      <Image
+        src={img}
+        alt={alt}
+        fill
+        placeholder="blur"
+      />
     </Placeholder>
   );
 }

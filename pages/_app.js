@@ -157,8 +157,8 @@ function MyApp({ Component, pageProps }) {
       <MouseContextProvider>
         <GlobalStyle theme={theme} />
         <Head>
-          <title>Hextra Skateboarding</title>
-          <meta name="description" content={seo.content} />
+          <title>Hextra Skateboarding - Rip the streets, not the planet</title>
+
           <meta
             name="theme-color"
             media="(prefers-color-scheme: light)"

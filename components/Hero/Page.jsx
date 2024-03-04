@@ -253,11 +253,11 @@ export default function HeroPage({ data, textDark }) {
           <Placeholder>
             <Image
               src={data.img}
+              alt={data.alt}
               fill
               sizes="100%"
               style={{ objectFit: "cover" }}
               placeholder="blur"
-              alt="Picture of the author"
             />
           </Placeholder>
           <SvgH

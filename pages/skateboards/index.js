@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Head from "next/head";
+
 import useElementOnScreen from "@/hooks/useElementOnScreen";
 
 import { MouseContext } from "@/context/mouseContext";
@@ -43,6 +44,7 @@ const hero = {
   subGroupTitle: "Fabrication",
   subGroupText: "Rekiem Skateboards, Anglet",
   img: heroSkateboards,
+  alt: "Planche de skateboard Hextra Skateboarding, désignée à Bordeaux et fabriquée en France.",
 };
 
 export default function Skateboards({ handleRenderTheme, theme }) {
@@ -82,7 +84,10 @@ export default function Skateboards({ handleRenderTheme, theme }) {
   return (
     <>
       <Head>
-        <title>Hextra Skateboarding | Skateboards</title>
+        <meta
+          name="description"
+          content="Des planches de skateboard désignées à Bordeaux et fabriquées en France."
+        />
       </Head>
       <Layout
         handleRenderTheme={handleRenderTheme}
@@ -98,20 +103,30 @@ export default function Skateboards({ handleRenderTheme, theme }) {
           fullScreen
           extraPadding
           img={sectionFullPageGeorgeBriggs}
+          alt="George Briggs passe la planche de skateboard Hextra Skateboarding au test en ollie à Orléans, filmé par Robin Claude."
           objectPosition="top"
           fadeIn
         />
 
         <ProductSection alignRight>
           <ProductImages>
-            <ProductImage img={sectionProductSkateboardsPrimary} index={0} />
-            <ProductImage img={sectionProductSkateboardsSecondary} index={1} />
+            <ProductImage
+              img={sectionProductSkateboardsPrimary}
+              index={0}
+              alt="Planches de skateboard Hextra Skateboarding, désignées à Bordeaux et fabriquées en France."
+            />
+            <ProductImage
+              img={sectionProductSkateboardsSecondary}
+              index={1}
+              alt="Planches de skateboard Hextra Skateboarding, désignées à Bordeaux et fabriquées en France."
+            />
           </ProductImages>
         </ProductSection>
 
         <Section
           fullScreen
           img={sectionFullPageSkateboardsPrimary}
+          alt="Planches de skateboard Hextra Skateboarding, désignées à Bordeaux et fabriquées en France."
           fadeIn
           textColor={`${_var.mono_010}`}
         >
@@ -124,15 +139,31 @@ export default function Skateboards({ handleRenderTheme, theme }) {
 
         <ProductSection>
           <ProductImages>
-            <ProductImage img={sectionProductSkateboardsThird} index={0} />
-            <ProductImage img={sectionProductSkateboardsFourth} index={1} />
+            <ProductImage
+              img={sectionProductSkateboardsThird}
+              index={0}
+              alt="Planche de skateboard Hextra Skateboarding, désignée à Bordeaux et fabriquée en France."
+            />
+            <ProductImage
+              img={sectionProductSkateboardsFourth}
+              index={1}
+              alt="Planche de skateboard Hextra Skateboarding, désignée à Bordeaux et fabriquée en France."
+            />
           </ProductImages>
         </ProductSection>
 
         <ProductSection alignRight>
           <ProductImages>
-            <ProductImage img={sectionProductSkateboardsFifth} index={0} />
-            <ProductImage img={sectionProductSkateboardsSixth} index={1} />
+            <ProductImage
+              img={sectionProductSkateboardsFifth}
+              index={0}
+              alt="Planche de skateboard Hextra Skateboarding, désignée à Bordeaux et fabriquée en France."
+            />
+            <ProductImage
+              img={sectionProductSkateboardsSixth}
+              index={1}
+              alt="Planche de skateboard Hextra Skateboarding, désignée à Bordeaux et fabriquée en France."
+            />
           </ProductImages>
           <ProductText>
             <H2 style={{ textWrap: "balance" }}>
@@ -143,16 +174,35 @@ export default function Skateboards({ handleRenderTheme, theme }) {
           </ProductText>
         </ProductSection>
 
-        <Section fullScreen img={sectionFullPageSkateboardsSecondary} fadeIn />
+        <Section
+          fullScreen
+          img={sectionFullPageSkateboardsSecondary}
+          alt="Planche de skateboard Hextra Skateboarding, désignée à Bordeaux et fabriquée en France à partir d'érable canadien."
+          fadeIn
+        />
 
         <ProductSection>
           <ProductImages>
-            <ProductImage img={sectionProductGeorgeBriggsPrimary} index={0} />
-            <ProductImage img={sectionProductLaurentRoyerSecondary} index={1} />
+            <ProductImage
+              img={sectionProductGeorgeBriggsPrimary}
+              alt="George Briggs en frontside bluntslide à Bordeaux."
+              index={0}
+            />
+            <ProductImage
+              img={sectionProductLaurentRoyerSecondary}
+              alt="Laurent Royer en frontside boardslide à Caen."
+              index={1}
+            />
           </ProductImages>
         </ProductSection>
 
-        <Section footer footerFade img={sectionFullPageFooter} reveal />
+        <Section
+          footer
+          footerFade
+          img={sectionFullPageFooter}
+          alt="Laurent Royer en 360 flip à Caen.s"
+          reveal
+        />
         <Footer theme={theme} />
       </Layout>
     </>

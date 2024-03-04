@@ -115,6 +115,7 @@ export default function Section({
   footer,
   footerFade,
   img,
+  alt,
   reveal,
   fadeIn,
   textColor,
@@ -145,10 +146,10 @@ export default function Section({
         <Text $textColor={textColor}>{children}</Text>
         <Image
           src={img}
+          alt={alt}
           fill
           style={{ objectFit: "cover" }}
           placeholder="blur"
-          alt="Picture of the author"
         />
       </Placeholder>
     </Container>

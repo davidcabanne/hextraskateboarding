@@ -48,11 +48,12 @@ const hero = {
   subGroupTitle: "Fabrication",
   subGroupText: "<500km de Bordeaux",
   img: heroLookbook,
+  alt: "Amiel Coralia porte un tee-shirt Hextra Skateboarding fabriqué en France à partir de coton recyclé.",
 };
 
 const gallery = {
   src: sectionFullPageUlla,
-  alt: "alt",
+  alt: "David Cabanne porte une écharpe Hextra Skateboarding fabriquée en France, à Bordeaux avec de la laine 100% française.",
 };
 
 export default function Lookbook({ handleRenderTheme, theme }) {
@@ -78,10 +79,16 @@ export default function Lookbook({ handleRenderTheme, theme }) {
   return (
     <>
       <Head>
-        <title>Hextra Skateboarding | Lookbook</title>
+        <meta
+          name="description"
+          content="Des vêtements de skate fabriqués en France à partir de coton recyclé et des capsules de pièces de seconde main chinées à Bordeaux."
+        />
       </Head>
-      <Layout handleRenderTheme={handleRenderTheme} theme={theme} heroLogo={heroLogo}>
-
+      <Layout
+        handleRenderTheme={handleRenderTheme}
+        theme={theme}
+        heroLogo={heroLogo}
+      >
         <div ref={containerRef}>
           <HeroPage data={hero} />
         </div>
@@ -90,6 +97,7 @@ export default function Lookbook({ handleRenderTheme, theme }) {
           fullScreen
           extraPadding
           img={sectionFullPageGeorgeBriggs}
+          alt="George Briggs porte un tee-shirt Hextra Skateboarding fabriqué en France à partir de coton recyclé."
           reveal
         />
 
@@ -98,10 +106,12 @@ export default function Lookbook({ handleRenderTheme, theme }) {
             <ProductImage
               img={sectionProductQuentinDemeesterPrimary}
               index={0}
+              alt="Quentin Demeester porte un tee-shirt Hextra Skateboarding fabriqué en France à partir de coton recyclé."
             />
             <ProductImage
               img={sectionProductQuentinDemeesterSecondary}
               index={1}
+              alt="Quentin Demeester porte un tee-shirt Hextra Skateboarding fabriqué en France à partir de coton recyclé."
             />
           </ProductImages>
         </ProductSection>
@@ -109,6 +119,7 @@ export default function Lookbook({ handleRenderTheme, theme }) {
         <Section
           fullScreen
           img={sectionFullPageQuentinDemeester}
+          alt="Quentin Demeester porte un tee-shirt Hextra Skateboarding fabriqué en France à partir de coton recyclé."
           objectPosition="top"
           reveal
           textColor={`${_var.mono_010}`}
@@ -122,15 +133,31 @@ export default function Lookbook({ handleRenderTheme, theme }) {
 
         <ProductSection>
           <ProductImages>
-            <ProductImage img={sectionProductAmielCoraliaPrimary} index={0} />
-            <ProductImage img={sectionProductAmielCoraliaSecondary} index={1} />
+            <ProductImage
+              img={sectionProductAmielCoraliaPrimary}
+              index={0}
+              alt="Amiel Coralia porte un pull de seconde main Hextra Shift, chiné à Bordeaux."
+            />
+            <ProductImage
+              img={sectionProductAmielCoraliaSecondary}
+              index={1}
+              alt="Amiel Coralia porte un pull de seconde main Hextra Shift, chiné à Bordeaux."
+            />
           </ProductImages>
         </ProductSection>
 
         <ProductSection alignRight>
           <ProductImages>
-            <ProductImage img={sectionProductAmielCoraliaThird} index={0} />
-            <ProductImage img={sectionProductAmielCoraliaFourth} index={1} />
+            <ProductImage
+              img={sectionProductAmielCoraliaThird}
+              index={0}
+              alt="Amiel Coralia porte un pull de seconde main Hextra Shift, chiné à Bordeaux."
+            />
+            <ProductImage
+              img={sectionProductAmielCoraliaFourth}
+              index={1}
+              alt="Amiel Coralia porte une chemise de seconde main Hextra Shift."
+            />
           </ProductImages>
           <ProductText>
             <H1>Hextra Shift</H1>
@@ -148,8 +175,16 @@ export default function Lookbook({ handleRenderTheme, theme }) {
 
         <ProductSection>
           <ProductImages>
-            <ProductImage img={sectionProductScarfPrimary} index={0} />
-            <ProductImage img={sectionProductScarfSecondary} index={1} />
+            <ProductImage
+              img={sectionProductScarfPrimary}
+              index={0}
+              alt="Écharpe Hextra Skateboarding fabriquée en France, à Bordeaux avec de la laine 100% française."
+            />
+            <ProductImage
+              img={sectionProductScarfSecondary}
+              index={1}
+              alt="Écharpe Hextra Skateboarding fabriquée en France, à Bordeaux avec de la laine 100% française."
+            />
           </ProductImages>
           <ProductText>
             <H1>Hextra Scarf</H1>
@@ -160,7 +195,12 @@ export default function Lookbook({ handleRenderTheme, theme }) {
           </ProductText>
         </ProductSection>
 
-        <Section footer img={sectionFullPageFooter} reveal />
+        <Section
+          footer
+          img={sectionFullPageFooter}
+          alt="La team Hextra Skateboarding en skate trip à Orléans."
+          reveal
+        />
         <Footer footerLight theme={theme} />
       </Layout>
     </>

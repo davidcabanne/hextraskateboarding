@@ -1,6 +1,6 @@
-export const content = "Hextra Skateboarding | Rip the streets, not the planet";
+export const content = "Hextra Skateboarding - Rip the streets, not the planet";
 export const headDescription =
-  "Hextra Skateboarding | Rip the streets, not the planet";
+  "Du skate, des ondes positives et des produits responsables fabriqués localement, en France.";
 
 export const headImage_secure_url = "";
 export const headImage = "";

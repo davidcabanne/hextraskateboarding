@@ -1,4 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
+import Head from "next/head";
+
 import { MouseContext } from "@/context/mouseContext";
 import useElementOnScreen from "@/hooks/useElementOnScreen";
 
@@ -34,26 +36,31 @@ const heroes = [
   {
     name: "George Briggs",
     img: homeHeroGeorgeBriggs,
+    alt: "George Briggs en frontside bluntslide à Bordeaux.",
     index: 0,
   },
   {
     name: "David Cabanne",
     img: homeHeroDavidCabanne,
+    alt: "David Cabanne en backside noseslide à Bordeaux.",
     index: 1,
   },
   {
     name: "David Métivier",
     img: homeHeroDavidMétivier,
+    alt: "David métivier en backside crooked grind à Bordeaux.",
     index: 2,
   },
   {
     name: "Laurent Royer",
     img: homeHeroLaurentRoyer,
+    alt: "Laurent Royer en frontside boardslide à Caen. ",
     index: 3,
   },
   {
     name: "Gabriel Renault",
     img: homeHeroGabrielRenault,
+    alt: "Gabriel Renault en fakie wallride à Caen.",
     index: 4,
   },
 ];
@@ -74,11 +81,21 @@ const video_almost_there = {
   title: "Hextra Skateboarding | ALMOST THERE",
   src: "https://www.youtube.com/embed/0WVK8aUEoQE?si=B31ktaGrU3HrwpXY",
   img: sectionVideo,
-  alt: "Artwork de la vidéo part Almost There de David Métivier pour Hextra Skateboarding",
+  alt: "Vidéo de skateboard de David Métivier pour Hextra Skateboarding.",
 };
 
 import sectionSplitMtvPrimary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-01.jpg";
 import sectionSplitMtvSecondary from "../public/pictures/home/hextraSkateboarding-homeSplit-davidMétivier-02-alt.jpg";
+const sectionSplitMtvData = [
+  {
+    img: sectionSplitMtvPrimary,
+    alt: "David métivier en backside crooked grind à Bordeaux.",
+  },
+  {
+    img: sectionSplitMtvSecondary,
+    alt: "David métivier en frontside grind à Angers.",
+  },
+];
 
 export default function Home({ handleRenderTheme, theme }) {
   const [heroLogo, setHeroLogo] = useState();
@@ -101,90 +118,130 @@ export default function Home({ handleRenderTheme, theme }) {
   }, [isVisible]);
 
   return (
-    <Layout handleRenderTheme={handleRenderTheme} theme={theme} heroLogo={heroLogo}>
+    <>
+      <Head>
+        <meta
+          name="description"
+          content="Du skate, des ondes positives et des produits responsables fabriqués localement, en France."
+        />
+      </Head>
 
-      <div ref={containerRef}>
-        <Hero imgs={heroes} />
-      </div>
-
-      <Section
-        fullScreen
-        extraPadding
-        img={sectionFullPageGeorgeBriggs}
-        reveal
-        textColor={`${_var.mono_000}`}
+      <Layout
+        handleRenderTheme={handleRenderTheme}
+        theme={theme}
+        heroLogo={heroLogo}
       >
-        <H2>
-          Designed in Bordeaux.
-          <br />
-          Made in France.
-        </H2>
-      </Section>
+        <div ref={containerRef}>
+          <Hero imgs={heroes} />
+        </div>
 
-      <ProductSection alignRight>
-        <ProductImages>
-          <ProductImage img={sectionProductHextraShiftPrimary} index={0} />
-          <ProductImage img={sectionProductHextraShiftSecondary} index={1} />
-        </ProductImages>
-        <ProductText>
-          <H1>Look Book</H1>
+        <Section
+          fullScreen
+          extraPadding
+          img={sectionFullPageGeorgeBriggs}
+          alt={
+            "George Briggs monte une planche de skateboard Hextra Skateboarding à Bordeaux."
+          }
+          reveal
+          textColor={`${_var.mono_000}`}
+        >
           <H2>
-            Fabriqué ou chiné en France, résistant aux chutes les plus
-            violentes.
+            Designed in Bordeaux.
+            <br />
+            Made in France.
           </H2>
-          <ButtonPrimary
-            link="/lookbook"
-            ariaLabel="En savoir plus en visitant notre page lookbook"
-            theme={theme}
-            alignRight
-          />
-        </ProductText>
-      </ProductSection>
+        </Section>
 
-      <ProductSection>
-        <ProductImages>
-          <ProductImage img={sectionProductSkateboardsPrimary} index={0} />
-          <ProductImage img={sectionProductSkateboardsSecondary} index={1} />
-        </ProductImages>
-        <ProductText>
-          <H1>Hextra Skateboards</H1>
+        <ProductSection alignRight>
+          <ProductImages>
+            <ProductImage
+              img={sectionProductHextraShiftPrimary}
+              index={0}
+              alt="Amiel Coralia porte un pull de seconde main Hextra Shift, chiné à Bordeaux."
+            />
+            <ProductImage
+              img={sectionProductHextraShiftSecondary}
+              index={1}
+              alt="Amiel Coralia porte une chemise de seconde main Hextra Shift."
+            />
+          </ProductImages>
+          <ProductText>
+            <H1>Look Book</H1>
+            <H2>
+              Fabriqué ou chiné en France, résistant aux chutes les plus
+              violentes.
+            </H2>
+            <ButtonPrimary
+              link="/lookbook"
+              ariaLabel="En savoir plus en visitant notre page lookbook"
+              theme={theme}
+              alignRight
+            />
+          </ProductText>
+        </ProductSection>
+
+        <ProductSection>
+          <ProductImages>
+            <ProductImage
+              img={sectionProductSkateboardsPrimary}
+              index={0}
+              alt="Les planches de skateboard Hextra Skateboarding, fabriquées en France."
+            />
+            <ProductImage
+              img={sectionProductSkateboardsSecondary}
+              index={1}
+              alt="Les planches de skateboard Hextra Skateboarding, fabriquées en France."
+            />
+          </ProductImages>
+          <ProductText>
+            <H1>Hextra Skateboards</H1>
+            <H2>
+              Fabriquées dans un atelier français à moins de 200km de Bordeaux.
+            </H2>
+            <ButtonPrimary
+              link="/skateboards"
+              ariaLabel="En savoir plus en visitant notre page skateboards"
+              theme={theme}
+            />
+          </ProductText>
+        </ProductSection>
+
+        <Section
+          fullScreen
+          img={sectionFullPageTeam}
+          alt="La team Hextra en skate trip à Orléans."
+          reveal
+          textColor={`${_var.mono_010}`}
+        >
           <H2>
-            Fabriquées dans un atelier français à moins de 200km de Bordeaux.
+            Rip the streets,
+            <br />
+            not the planet.
           </H2>
-          <ButtonPrimary
-            link="/skateboards"
-            ariaLabel="En savoir plus en visitant notre page skateboards"
-            theme={theme}
-          />
-        </ProductText>
-      </ProductSection>
+        </Section>
 
-      <Section
-        fullScreen
-        img={sectionFullPageTeam}
-        reveal
-        textColor={`${_var.mono_010}`}
-      >
-        <H2>
-          Rip the streets,
-          <br />
-          not the planet.
-        </H2>
-      </Section>
+        <VideoSection>
+          <VideoPlaceholder data={video_almost_there} />
+          <VideoText alignRight>
+            <H1>Almost There</H1>
+            <H2>David Métivier en action pour sa première part avec Hextra.</H2>
+          </VideoText>
+        </VideoSection>
 
-      <VideoSection>
-        <VideoPlaceholder data={video_almost_there} />
-        <VideoText alignRight>
-          <H1>Almost There</H1>
-          <H2>David Métivier en action pour sa première part avec Hextra.</H2>
-        </VideoText>
-      </VideoSection>
+        <SplitSection
+          imgs={sectionSplitMtvData}
+        />
 
-      <SplitSection imgs={[sectionSplitMtvPrimary, sectionSplitMtvSecondary]} />
+        <Section
+          footer
+          footerFade
+          img={sectionFullPageFooter}
+          alt="Amiel Coralia porte un tee-shirt Hextra Skateboarding fabriqué en France à partir de coton recyclé. "
+          reveal
+        />
 
-      <Section footer footerFade img={sectionFullPageFooter} reveal />
-
-      <Footer />
-    </Layout>
+        <Footer />
+      </Layout>
+    </>
   );
 }

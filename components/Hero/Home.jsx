@@ -275,7 +275,7 @@ export default function Hero({ imgs }) {
           </SvgV>
           <Placeholder ref={placeholderRef}>
             {imgs.map((item) => {
-              const { index, img } = item;
+              const { index, img, alt } = item;
               return (
                 <StyledImage
                   key={img.src}
@@ -285,7 +285,7 @@ export default function Hero({ imgs }) {
                   sizes="100%"
                   style={{ objectFit: "cover" }}
                   placeholder="blur"
-                  alt="Picture of the author"
+                  alt={alt}
                   className={indexCount === index ? "active" : ""}
                 />
               );

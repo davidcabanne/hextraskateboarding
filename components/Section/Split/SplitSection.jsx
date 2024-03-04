@@ -75,8 +75,10 @@ const SvgMobile = styled.svg`
 `;
 
 export default function SplitSection({ imgs }) {
-  const leftImg = imgs[0];
-  const rightImg = imgs[1];
+  const leftImg = imgs[0].img;
+  const leftAlt = imgs[0].alt;
+  const rightImg = imgs[1].img;
+  const rightAlt = imgs[1].alt;
 
   // HOOK
   const [containerRef, isVisible] = useElementOnScreen({
@@ -131,9 +133,9 @@ export default function SplitSection({ imgs }) {
       <Placeholder key={leftImg.src}>
         <Image
           src={leftImg}
+          alt={leftAlt}
           placeholder="blur"
           style={{ objectFit: "cover" }}
-          alt="Picture of the author"
           className="order"
         />
       </Placeholder>
@@ -212,9 +214,9 @@ export default function SplitSection({ imgs }) {
       <Placeholder key={rightImg.src}>
         <Image
           src={rightImg}
+          alt={rightAlt}
           placeholder="blur"
           style={{ objectFit: "cover" }}
-          alt="Picture of the author"
         />
       </Placeholder>
       <Svg
