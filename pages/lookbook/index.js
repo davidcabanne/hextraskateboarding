@@ -42,7 +42,7 @@ import sectionProductScarfSecondary from "../../public/pictures/lookbook/hextraS
 const hero = {
   title: "Hextra Lookbook",
   subtitle:
-    "Fabriquées/chiné en France, résistant aux chutes les plus violentes.",
+    "Fabriqué/chiné en France, résistant aux chutes les plus violentes.",
   groupTitle: "Direction Artistique",
   groupText: "Théo Chapdelaine",
   subGroupTitle: "Fabrication",

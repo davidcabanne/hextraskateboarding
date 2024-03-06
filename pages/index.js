@@ -166,7 +166,7 @@ export default function Home({ handleRenderTheme, theme }) {
             />
           </ProductImages>
           <ProductText>
-            <H1>Look Book</H1>
+            <H1>Hextra Lookbook</H1>
             <H2>
               Fabriqué ou chiné en France, résistant aux chutes les plus
               violentes.
