@@ -43,10 +43,6 @@ const Gallery = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   gap: ${_var.space_L};
 
-  & div {
-    aspect-ratio: 1.33;
-  }
-
   @media ${_var.device.desktop_max} {
     grid-template-columns: 1fr 1fr;
   }
@@ -65,6 +61,7 @@ const ExtLink = styled.a`
   align-items: center;
   text-decoration: none;
   cursor: none;
+  aspect-ratio: 1.33;
 
   @media ${_var.device.tablet_max} {
     cursor: pointer;
