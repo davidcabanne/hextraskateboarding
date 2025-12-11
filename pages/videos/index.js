@@ -40,7 +40,7 @@ const gallery = [
     img: videoGalleryAlmostThere,
     alt: "Almost there, vidéo de skateboard de David Métivier pour Hextra Skateboarding.",
     title: "Almost There",
-    link: "https://youtu.be/0WVK8aUEoQE?si=aL0hgSYWZ9niqM-B",
+    link: "https://youtu.be/So3Oune8G4c?si=PDkvsyz2MdMehHbE",
   },
   {
     img: videoGalleryHextraHoursSecondary,
@@ -58,7 +58,7 @@ const gallery = [
     img: videoGalleryLautreRive,
     alt: "Le team Hextra Skateboarding sillonne la rive droite de Bordeaux en skateboard.",
     title: "L'autre Rive",
-    link: "https://youtu.be/kHJTurVNsHI?si=27v_TWKZIuzF2dLv",
+    link: "https://youtu.be/uSJj2XZDKxc?si=_BliGY0EmrqXdiFH",
   },
   {
     img: videoGalleryHextraHoursPrimary,
@@ -70,7 +70,7 @@ const gallery = [
     img: videoGalleryNextDoor,
     alt: "La première vidéo de skateboard du team Hextra Skateboarding, filmé à Caen, Paris et Bordeaux.",
     title: "Next Door",
-    link: "https://youtu.be/hQfmnwwdUFE?si=EckGWzJADF55C7-o",
+    link: "https://youtu.be/jc_Frj1n-dY?si=QiSzKLNQV8Z0lpGv",
   },
 ];
 

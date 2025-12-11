@@ -79,7 +79,7 @@ import sectionVideo from "../public/pictures/videos/hextraSkateboarding-videosVi
 
 const video_almost_there = {
   title: "Hextra Skateboarding | ALMOST THERE",
-  src: "https://www.youtube.com/embed/0WVK8aUEoQE?si=B31ktaGrU3HrwpXY",
+  src: "https://www.youtube.com/embed/So3Oune8G4c?si=46p5i104h9fEcAYV",
   img: sectionVideo,
   alt: "Vidéo de skateboard de David Métivier pour Hextra Skateboarding.",
 };
@@ -228,9 +228,7 @@ export default function Home({ handleRenderTheme, theme }) {
           </VideoText>
         </VideoSection>
 
-        <SplitSection
-          imgs={sectionSplitMtvData}
-        />
+        <SplitSection imgs={sectionSplitMtvData} />
 
         <Section
           footer

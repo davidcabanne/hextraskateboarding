@@ -87,6 +87,8 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
               link="lookbook"
               active={`${pathname}` === "/lookbook"}
               theme={theme}
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
             >
               Lookbook
             </NavLink>
@@ -96,6 +98,8 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
               link="skateboards"
               active={`${pathname}` === "/skateboards"}
               theme={theme}
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
             >
               Skateboards
             </NavLink>
@@ -105,6 +109,8 @@ export default function NavDesktop({ handleRenderTheme, theme }) {
               link="videos"
               active={`${pathname}` === "/videos"}
               theme={theme}
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
             >
               Videos
             </NavLink>
